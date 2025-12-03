@@ -1,0 +1,36 @@
+@import 'var.less';
+
+
+
+.writer-story-about-config-panel {
+    .config-panel-side {
+        .config-field {
+            span {
+                // Width hardcoded to current content.
+                flex: none;
+                width: 250px;
+            }
+        }
+
+        .config-field-textarea {
+            textarea {
+                // Hardcoded to align in height to config panel to the right.
+                min-height: 363px;
+                resize: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-m) {
+    .writer-story-about-config-panel {
+        .config-panel-side {
+            .config-field {
+                span {
+                    // Width hardcoded to current content.
+                    width: 125px;
+                }
+            }
+        }
+    }
+}

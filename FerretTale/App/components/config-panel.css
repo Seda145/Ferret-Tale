@@ -1,0 +1,30 @@
+/* Color Branding */
+/* Media rules */
+.config-panel {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 15px;
+  gap: 45px;
+  background-color: #120006;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.config-panel p,
+.config-panel h5 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  user-select: none;
+}
+.config-panel .config-panel-side {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .config-panel {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,130 @@
+@import 'var.less';
+@import 'page-injector-var.less';
+
+
+.load-userdata-page {
+    display: flex;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+
+    .background-lighting {
+        // Sync opacity with start value in animation.
+        opacity: 0.4;
+        animation: bounce-background-lighting 16s ease @page-injector-transition-speed infinite;
+    }
+
+    .load-userdata-page-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: contain;
+        // Put the background image behind the content of this page, but in front of main.
+        z-index: -1;
+        animation: load-userdata-page-background 16s ease @page-injector-transition-speed infinite, load-userdata-page-background-slide 1s ease;
+    }
+
+    .load-userdata-section {
+        margin-top: @padding-column * 2;
+        padding: @padding-column;
+        width: 325px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: @padding-column;
+        background: @color-1-darkest-a85;
+        border-radius: @border-radius-large;
+        border: thin solid @color-1;
+        box-shadow: 0px 0px 5px @color-1 inset;
+        opacity: 0;
+        transform: translateX(-@padding-column);
+        transition: opacity 0.5s ease-in @page-injector-transition-speed, transform 0.5s ease @page-injector-transition-speed;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .load-userdata-two-steps-wrap {
+            display: flex;
+            margin-top: @padding-column * 3;
+            flex-direction: column;
+            gap: @padding-column;
+
+            .load-userdata-two-steps-copy-path {
+                margin-top: @padding-two-third;
+                margin-bottom: @padding-two-third;
+            }
+        }
+    }
+}
+
+body.js-loaded-app {
+    .load-userdata-page {
+        .load-userdata-section {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-mobile) {
+    .load-userdata-page {
+        .max-width-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .load-userdata-section {
+                margin-top: 28vw;
+                margin-bottom: @padding-column * 5;
+            }
+        }
+    }
+}
+
+@keyframes load-userdata-page-background {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(0.94);
+    }      
+    
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes load-userdata-page-background-slide {
+    0% {
+        translate: -60px 40px;
+    }
+
+    100% {
+        translate: 0px 0px;
+    }
+}
+
+@keyframes bounce-background-lighting {
+    // Sync opacity with start value in default state.
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

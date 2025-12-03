@@ -1,0 +1,27 @@
+@import 'var.less';
+
+
+
+.config-field {
+    display: flex;
+    gap: @padding-two-third;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+        user-select: none;
+        min-height: @padding-column * 2;
+        flex: 1;
+
+        &:hover {
+            cursor: help;
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-s) {
+    .config-field {
+        flex-direction: column;
+        align-items: start;
+    }
+}

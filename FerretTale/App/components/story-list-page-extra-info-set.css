@@ -1,0 +1,19 @@
+/* Color Branding */
+/* Media rules */
+.story-list-page-extra-info-set {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.story-list-page-extra-info-set .story-list-page-extra-info-set-side {
+  text-align: left;
+}
+.story-list-page-extra-info-set .story-list-page-extra-info-set-side p {
+  font-size: 1rem;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: rgba(235, 226, 229, 0.7);
+}
+.story-list-page-extra-info-set .story-list-page-extra-info-set-side:first-child {
+  width: 75px;
+}

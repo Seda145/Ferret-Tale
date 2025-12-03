@@ -1,0 +1,26 @@
+@import 'var.less';
+@import 'page-injector-var.less';
+
+
+// I put this here for now to add some margin to the top of every page. 
+// Looks better and keeps the top content visible when the mobile nav menu or header scrolls down the page a bit.
+.page-injector {
+    margin-top: @padding-column * 4;
+    margin-bottom: @padding-column * 2;
+    opacity: 0;
+    transition: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    &.page-injector-fade-in {
+        opacity: 1;
+        transition: opacity @page-injector-transition-speed ease-in;
+    }
+
+    [data-component="injected-page"] {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+}

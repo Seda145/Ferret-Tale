@@ -1,0 +1,93 @@
+@import 'var.less';
+@import 'story-page-var.less';
+
+
+
+.story-reader-info-panel-info {
+    display: flex;
+    flex-direction: column;
+    gap: @padding-column;
+
+    .story-reader-info-panel-info-header {
+        &.appear-header-size-n {
+            font-size: @font-size-h4;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+        &.appear-header-size-l {
+            font-size: @font-size-h3;
+            margin-top: @padding-column;
+            margin-bottom: @padding-column;
+        }
+    
+        &.appear-header-size-xl {
+            font-size: @font-size-h2;
+            // A little extra margin to separate the xl header from top of the page, where it usually is.
+            margin-top: @padding-column * 2;
+            // No margin done on the bottom, there's the gap property on the parent info panel.
+            margin-bottom: 0;
+            // Additional styling. This header type is expected to be the title of the panel,
+            // Or at least the main category / categories of content on it.
+            color: @color-1-light;
+            border-left: medium solid @color-1;
+            border-right: medium solid @color-1;
+            border-radius: @border-radius-smallest;
+            padding-left: @padding-two-third;
+            padding-right: @padding-two-third;
+            text-align: center;
+        }
+    }
+
+    .story-reader-info-panel-info-description-and-image-wrap {
+        display: flex;
+        gap: @padding-column;
+
+        .story-reader-info-panel-info-image {
+            // Or width will not be respected.
+            flex: none;
+        }
+        
+        .story-reader-info-panel-info-description {
+            margin: 0;
+            flex: 1;
+            // Text width looks similar to the text on the story page (not too wide).
+            max-width: @story-text-block-row-compact-width;
+        }
+
+        &.appear-image-mode-col {
+            flex-direction: row;
+
+            .story-reader-info-panel-info-image {
+                // As a column, an image is used more like an icon.
+                width: 100px;
+                height: 100px;
+            }
+        }
+    
+        &.appear-image-mode-row {
+            flex-direction: column;
+
+            .story-reader-info-panel-info-image {
+                // Size is up to the image file.
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                // Or size will grow to fill parent because of flex.
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-m) {
+    .story-reader-info-panel-info {
+        .story-reader-info-panel-info-description-and-image-wrap {
+            // Pretend we are creating rows (image above or below description text.).
+            // But don't alter the image size.
+            &.appear-image-mode-col {
+                flex-direction: column;
+            }
+        }
+    }
+}

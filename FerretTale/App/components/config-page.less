@@ -1,0 +1,61 @@
+@import 'var.less';
+
+
+.config-page {
+    // I need this page to be a bit longer (as long as there is no more content).
+    // This makes the top header align with headers on the help / story list page when scrolling down to main.
+    // Currently this is the exact value that also the footer is on screen without having to scroll further down.
+    margin-bottom: @padding-column * 6;
+
+    .config-fieldset-wrap {
+        gap: @padding-column * 4;
+        display: flex;
+        flex-direction: column;
+        // Just for looks.
+        margin-top: @padding-column * 4;
+        margin-bottom: @padding-column * 4;
+        // Hardcoded width for current content.
+        width: 500px;
+        max-width: 100%;
+
+        .config-field-select {
+            select {
+                // By default takes full width.
+                // Fine but this looks better on the settings page.
+                flex: none;
+                width: 200px;
+            }
+        }
+
+        .config-field-range {
+            input {
+                // By default takes full width.
+                // Fine but this looks better on the settings page.
+                flex: none;
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-s) {
+    .config-page {
+        .config-fieldset-wrap {
+            .config-field-select {
+                select {
+                    // And back to defaults.
+                    flex: 1;
+                    width: 100%;
+                }
+            }
+    
+            .config-field-range {
+                input {
+                    // And back to defaults.
+                    flex: 1;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

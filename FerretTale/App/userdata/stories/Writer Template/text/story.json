@@ -1,0 +1,26 @@
+{
+    "about": {
+        "author": "Roy Wierer",
+        "genre": "Fantasy",
+        "age": "All",
+        "version": "1.00",
+        "copyright": "Roy Wierer",
+        "language": "English",
+        "description": "This 'story' is a template, to be used by writers. Writers can duplicate this story to create their own stories more quickly.",
+        "storyCoverImage": "story_cover_image.jpg",
+        "readingLayout": "Row (compact)",
+        "showEmptyTextColumn": true,
+        "hideTitleWhileReading": false
+    },
+    "infoPanels": {},
+    "story": {
+        "0": {
+            "next":     ["1"],
+            "text": "The story starts here."
+        },
+
+        "1": {
+            "text": "The end."
+        }
+    }
+}

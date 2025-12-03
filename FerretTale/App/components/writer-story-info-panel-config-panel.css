@@ -1,0 +1,23 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-info-panel-config-panel {
+  flex-direction: column;
+}
+.writer-story-info-panel-config-panel .writer-story-info-panel-config-panel-config-fields-wrap,
+.writer-story-info-panel-config-panel .writer-story-info-panel-config-panel-info-panel-fields-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.writer-story-info-panel-config-panel .writer-story-info-panel-config-panel-config-fields-wrap {
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.writer-story-info-panel-config-panel .writer-story-info-panel-config-panel-config-fields-wrap .config-field span {
+  flex: none;
+  width: 100px;
+}
+.writer-story-info-panel-config-panel .writer-story-info-panel-config-panel-info-panel-fields-wrap {
+  flex: 1;
+}

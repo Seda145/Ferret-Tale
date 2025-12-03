@@ -1,0 +1,28 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-node {
+  border: medium solid #7a2a45;
+  border-radius: 10px;
+  background-color: #25010c;
+  z-index: 1;
+  opacity: 0.9;
+  user-select: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.writer-story-node span {
+  flex: 1;
+}
+.writer-story-node:hover {
+  cursor: pointer;
+  background-color: #7a2a45;
+}
+.writer-story-node.appear-active-id {
+  background-color: #ebe2e5;
+  color: #25010c;
+}
+.writer-story-node.appear-active-id:hover {
+  cursor: help;
+}

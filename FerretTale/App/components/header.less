@@ -1,0 +1,432 @@
+@import 'var.less';
+@import 'content-separator-var.less';
+@import 'header-var.less';
+
+
+
+.generate-mobile-nav-item-transition(@n: 10, @i: 1) when (@i =< @n) {
+    .nav-item:nth-child(@{i}) {
+        transition: border-bottom 0.15s ease-in, transform 0.2s ease (@i/10+0.2s), opacity 0.2s linear (@i/10+0.2s);
+    }
+
+    .generate-mobile-nav-item-transition(@n, (@i + 1));
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    .header-top {
+        display: flex;
+        background-color: @color-1;
+
+        .header-top-wrap {
+            padding: @padding-column;
+
+            .banner-logo {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: bottom left;
+                // match size to file size.
+                height: @header-banner-logo-height;
+                width: @header-banner-logo-width;
+            }
+        }
+    }
+
+    .header-bottom {
+        filter: drop-shadow(0px 0px 2px @color-2-dark);
+        background-image: linear-gradient(@color-1-darkest 0% calc(100% - 2px), @color-1 calc(100% - 2px));
+        
+        .header-bottom-wrap {
+            display: flex;
+            // hardcoded height so that jumping on content can be avoided when css sets it to position fixed.
+            height: @header-bottom-height;
+
+            .header-bottom-logo {
+                display: flex;
+                margin-top: @padding-one-third;
+                margin-bottom: @padding-one-third + @header-bottom-bar-height;
+                width: 216px;
+                height: @header-bottom-height - @padding-one-third * 2 - @header-bottom-bar-height;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center left;
+        
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            .header-nav-menu {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-items: end;
+
+                .header-nav-menu-inner {
+                    flex-direction: row;
+                    align-items: center;
+                    display: flex;
+                    gap: @padding-one-third;
+            
+                    .fake-mobile-menu-icon {
+                        // Fake mobile menu icon makes a user hover the header on PC, at which point the nav items will be shown.
+                        display: flex;
+                        opacity: 1;
+                        transition: opacity 0.4s ease-in;
+                    }
+            
+                    .nav-item {
+                        user-select: none;
+                        cursor: pointer;
+                        padding-left: @padding-column;
+                        padding-right: @padding-column;
+                        height: @header-bottom-height;
+                        align-content: center;
+                        border-bottom: @header-bottom-bar-height solid @color-transparent;
+                        transition: border-bottom 0.1s ease-in, background-color 0.1s ease-in, opacity 0.4s ease-in 0.1s;
+                        // I'm hiding the PC nav items until the header is hovered. Looks clean.
+                        visibility: collapse;
+                        opacity: 0;
+                        border-radius: @border-radius-smallest;
+            
+                        &:hover,
+                        &.active {
+                            text-decoration: none;
+                            border-bottom: @header-bottom-bar-height solid @color-1-near-white;
+                            background-color: @color-1-near-white-a25;
+                        }
+                        
+                        &:hover.active {
+                            // Clicking on an active nav item doesn't currently navigate.
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+
+            &.max-width-wrap {
+                padding-left: @padding-column;
+                padding-right: @padding-column;
+            }
+        }
+    }
+
+    .navigation-overlay {
+        visibility: collapse;
+        background-color: @color-transparent;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        // When disabling the mobile navigation style visibility gets a delay so that it fades out before disappearing
+        transition: background-color 0.3s ease-in, visibility 0s linear 0.4s;
+
+        .navigation-overlay-icon {
+            opacity: 0;
+            transform: rotateZ(-90deg);
+            // hardcoding, just position it nicely next to the menu panel
+            position: absolute;
+            right: @mobile-nav-menu-inner-width + 25px + @padding-column * 2;
+            transition: opacity 0.15s;
+    
+            .content-separator {
+                margin-bottom: 0;
+                background-color: @color-2-dark;
+                transition: background-color 0.1s ease-in 0.15s;
+    
+                .separator-icon {
+                    background-color: @color-2-dark;
+                    transition: background-color 0.1s ease-in 0.15s, top 0.15s ease 0.15s;
+    
+                    &:after {
+                        background-color: @color-1-near-white;
+                        transition: background-color 0.1s ease-in 0.15s;
+                    }
+                }
+            }
+        }
+    }
+
+    .mobile-nav-menu {
+        visibility: collapse;
+        will-change: transform;
+        transform: translateX(100%);
+        display: flex;
+        padding: calc(@padding-column);
+        position: fixed;
+        // top: mobile menu is displayed over the header bar since it has its own close button. no functionality need to put it under the bar.
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: @padding-column;
+        padding-top: @padding-column * 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow: auto;
+        border-left: thin solid @color-1-near-white;
+        filter: drop-shadow(-1px 0px 1px @color-1-near-white);
+        background-image: linear-gradient(90deg, @color-1-light, @color-1 10% 90%, @color-1-dark);
+
+        .mobile-nav-menu-inner {
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+            gap: @padding-column;
+            // to avoid menu from resizing use a width larger than a nav-item will ever be. Mind the position of the navigation-overlay-icon.
+            width: @mobile-nav-menu-inner-width;
+
+            .nav-item {
+                border-bottom: medium solid @color-1-near-white-a25;
+                transform: translatex(-30px);
+                opacity: 0;
+                border-radius: @border-radius-smallest;
+                user-select: none;
+                cursor: pointer;
+                margin: @padding-one-third @padding-one-third 0px @padding-column;
+                font-size: @font-size-smaller;
+                text-align: left;
+                padding-bottom: @padding-two-third;
+    
+                &:hover,
+                &.active {
+                    border-bottom: medium solid @color-1-near-white;
+                    text-decoration: none;
+                }
+    
+                &:hover.active {
+                    // Clicking on an active nav item doesn't currently navigate.
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .mobile-menu-icon,
+    .fake-mobile-menu-icon {
+        user-select: none;
+        opacity: 1;
+        display: none;
+        height: 25px;
+        border-radius: @border-radius-smallest;
+        align-self: center;
+        flex-direction: column;
+        gap: 8px;
+        // move up a bit cause the bottom of the header has a border visually
+        margin-top: calc(-@header-bottom-bar-height / 2);
+
+        .mobile-menu-icon-line {
+            background-color: @color-1-near-white;
+            width: 25px;
+            display: block;
+            border-radius: @border-radius-normal;
+            flex: 1;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+
+    &:hover {
+        .header-bottom {
+            .header-bottom-wrap {
+                .header-nav-menu {
+                    .header-nav-menu-inner {
+                        .fake-mobile-menu-icon {
+                            // When hovering the header on PC, I want to hide the fake mobile menu icon. 
+                            // Opacity will transition to 1 on unhover.
+                            opacity: 0;
+                            &:hover {
+                                cursor: default;
+                            }
+                        }
+                        .nav-item {
+                            // When hovering the header on PC, I want to show the nav items.
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:focus-within {
+        // This block is almost the same as &:hover, but works in a (somewhat) friendly way for tab navigation.
+        .header-bottom {
+            .header-bottom-wrap {
+                .header-nav-menu {
+                    .header-nav-menu-inner {
+                        .fake-mobile-menu-icon {
+                            // When hovering the header on PC, I want to hide the fake mobile menu icon. 
+                            // Opacity will transition to 1 on unhover.
+                            opacity: 0;
+                        }
+                        .nav-item {
+                            // When hovering the header on PC, I want to show the nav items.
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.mobile-nav {
+        .navigation-overlay {
+            visibility: visible;
+            background-color: @color-black-a95;
+        }
+    
+        .navigation-overlay-icon.content-separator-wrap {
+            opacity: 1;
+            transition: opacity 0.15s ease-in 1s;
+    
+            .content-separator {
+                background-color: @color-1-near-white;
+                transition: background-color 0.2s ease-in 1.15s;
+    
+                .separator-icon {
+                    background-color: @color-1-near-white;
+                    transition: background-color 0.2s ease-in 1.15s, top 0.15s ease 0.15s;
+    
+                    &:after {
+                        background-color: @color-2-dark;
+                        transition: background-color 0.2s ease-in 1.35s;
+                    }
+                }
+            }
+        }
+    
+        .navigation-overlay:hover {
+            .navigation-overlay-icon.content-separator-wrap {
+                .content-separator {
+                    .separator-icon {
+                        // move when the parent overlay is hovered just like the original does when hovered directly.
+                        top: @content-separator-hover-translate;
+                    }
+                }
+            }
+        }
+    
+        .mobile-nav-menu {
+            .generate-mobile-nav-item-transition(10, 1);
+            transform: translateX(0%);
+    
+            .nav-item {
+                transform: translatex(0px);
+                opacity: 1;
+            }
+        }
+    
+        .navigation-overlay {
+            transition: background-color 0.3s ease-in, visibility 0s linear 0s;
+        }
+    }
+}
+
+body.scroll-past-header-top {
+    header {
+        .header-bottom {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+
+            .header-bottom-wrap {
+                .header-bottom-logo {
+                    // This is a secondary (duplicate) logo shown under the big top header.
+                    // opacity 0 is inlined in html to avoid a 1 to 0 jump when css still loads.
+                    opacity: 1 !important;
+                    transition: opacity 0.1s ease-in;
+                }
+            }
+        }
+    }
+}
+
+body.scroll-past-header-top {
+    main {
+        // hardcoded height so that jumping on content can be avoided when css sets it to position fixed.
+        margin-top: @header-bottom-height;
+    }
+}
+
+body.disable-scroll {
+    .header-bottom {
+        // Prevent layout shift to content when scroll bar is disabled. 
+        padding-right: @expected-scroll-bar-width;
+    }
+}
+
+// Mobile navigation menu
+
+@media screen and (max-width: @screen-width-mobile) {
+    header {
+        .header-bottom {
+            .header-bottom-wrap {
+                .header-nav-menu {
+                    .header-nav-menu-inner {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mobile-menu-icon {
+            display: flex;
+        }
+
+        .mobile-nav-menu {
+            // When disabling the mobile navigation style visibility gets a delay so that it fades out before disappearing
+            transition: transform 0.3s ease-in, visibility 0s linear 0.3s, border-left 0.25s ease-in;
+        }
+
+        &.mobile-nav {
+            .mobile-nav-menu {
+                visibility: visible;
+                transition: transform 0.3s ease-in, visibility 0s linear 0s, border-left 0.25s ease-in;
+            }
+        }
+    }
+}
+
+/*
+*
+*	zindex
+*
+*/
+
+header {
+    // Reserving just a few lower z-indexes for content, 
+    // which is almost always a lower index.
+
+    .header-top {
+        z-index: 12;
+    }
+
+    .header-bottom {
+        z-index: 12;
+    }
+    
+    .navigation-overlay {
+        z-index: 10;
+    }
+
+    .mobile-nav-menu {
+        z-index: 11;
+    }
+}
+
+
+

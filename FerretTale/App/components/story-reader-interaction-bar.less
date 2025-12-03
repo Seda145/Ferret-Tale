@@ -1,0 +1,288 @@
+@import 'var.less';
+@import 'story-page-var.less';
+@import 'story-reader-interaction-bar-var.less';
+
+
+
+.story-reader-interaction-bar {
+    user-select: none;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: @color-2-dark-a7;
+    border-top: thin solid @color-1;
+    transition: background-color 0.2s ease-in 1s;
+
+    .story-reader-interaction-bar-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: thin solid @color-black;
+        // Height fitting the interaction mode button, and having just enough padding to look OK.
+        height: @padding-column * 3;
+        // Vertically center the content separator wrap
+        justify-content: center;
+
+        .content-separator-wrap {
+            display: none;
+            transform: rotateZ(180deg);
+            padding-top: 0px;
+            transition: opacity 0.3s ease-in 0.2s;
+            margin: 0px;
+
+            .content-separator {
+                margin: 0px;
+                background-color: @color-1-light;
+
+                .separator-icon {
+                    top: -5px;
+                    background-color: @color-1-light;
+                }
+            }
+
+            &:hover {
+                // To undo the original component behavior.
+                cursor: default;
+                
+                .content-separator {
+                    .separator-icon {
+                        // To undo the original component behavior.
+                        top: -5px;
+                    }
+                }
+            }
+        }  
+
+        .story-reader-interaction-single {
+            display: none;
+            flex: 1;
+            align-items: center;
+            transition: opacity 0.2s ease-in;
+
+            p {
+                margin: 0px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .story-reader-interaction-bar-inner-wrap {
+        height: 0px;
+        overflow: hidden;
+        opacity: 0;
+
+        .story-reader-interaction-bar-actions-wrap {
+            flex-direction: column;
+            gap: @padding-column;
+            padding-top: @padding-column;
+            // Note visibility collapse keeps height, so I don't use it.
+            display: none;
+        }
+
+        .story-reader-info-panel {
+            // Note visibility collapse keeps height, so I don't use it.
+            display: none;
+        }
+    }
+
+    .story-reader-interaction-bar-mode-button-wrap {
+        position: relative;
+        
+        .story-reader-interaction-bar-mode-button {
+            position: absolute;
+            // Room for 10 on top and 10 on bottom, with current height of "parent" bar.
+            bottom: 10px;
+            // Room for 2 left and 2 right (to content).
+            left: 2px;
+            // Paddings / positioning and "parent bar" height are expecting this size.
+            width: 25px;
+            height: 25px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 100%;
+            transition: background-color 0.15s ease;
+
+            &:hover {
+                background-color: @color-1-near-white;
+                cursor: pointer;
+            }
+
+            &.disabled {
+                display: none;
+            }
+        }
+    }
+
+    &.interaction-mode-action {
+        .story-reader-interaction-bar-inner-wrap {
+            .story-reader-interaction-bar-actions-wrap {
+                display: flex;
+            }
+        }
+    }
+
+    &.interaction-mode-info {
+        .story-reader-interaction-bar-inner-wrap {
+            .story-reader-info-panel {
+                display: flex;
+            }
+        }
+
+        .story-reader-interaction-bar-mode-button-wrap {
+            .story-reader-interaction-bar-mode-button {
+                // Just like hover, to show a reader we are using a special mode (other than story interaction).
+                background-color: @color-1-near-white;
+            }
+        }
+    }
+
+    &.continue-choice {
+        &.interaction-mode-action {
+            .story-reader-interaction-bar-top {
+                .story-reader-interaction-continue {
+                    display: flex;
+                }            
+            }            
+        }
+    }
+
+    &.multi-choice,
+    &.interaction-mode-info {
+        .story-reader-interaction-bar-top {
+            .content-separator-wrap {
+                display: block;
+            }
+        }
+
+        .story-reader-interaction-bar-inner-wrap {
+            // Moved this out of default and into &.multi-choice to avoid height transition on single action bar.
+            transition: height 0.7s ease-out 0.3s, opacity 0.7s ease-in;
+            // I decided to show a scroll bar by default because:
+            // 1. Showing it only when required creates a layout space skip during this element height change.
+            // 2. I don't estimate if one will be required or not.
+            // 3. Using animation delay on inner element for certain properties / values until after height change did not work.
+            // Instead of getting hacky or bothering more with this, just scroll. It's a small multi choice box so there would be a scroll bar most of the time.
+            overflow-y: scroll;
+            // There's a 2 * @padding-column coming from the max-width wrap, but the scroll-bar on the right pushes the content further to the left.
+            // Fixing that here:
+            padding-right: (@padding-column * 2) - @expected-scroll-bar-width;
+        }
+
+        // I've thought about opening the menu with a click instead of a hover,
+        // So that it doesn't open right away (from a "continue" button to a multi choice text block),
+        // Because that could open the menu over a text (you haven't read yet), if that textblock's text is huge.
+        // I decide not to, because that would be more likely a problem with the (writer's) text design than a problem with app design. Reasoning:
+        // 1. If you had to click the bar all the time, it would get annoying quickly. 
+        // 2. If you had to read a huge text wall before decision making, it would be annoying as well.
+        &:hover,
+        &:focus-within {
+            background-color: @color-2-dark;
+            transition: background-color 0.2s ease-in 0s, height 0.8s ease;
+
+            .story-reader-interaction-bar-top {
+                .content-separator-wrap {
+                    opacity: 0.2;
+
+                    .content-separator {
+                        .separator-icon {
+                            top: -5px;
+                        }
+                    }
+
+                    &:hover {
+                        .content-separator {
+                            .separator-icon {
+                                // To undo the original component behavior.
+                                top: -5px;
+                            }
+                        }
+                    }
+                }   
+            }
+
+            .story-reader-interaction-bar-inner-wrap {
+                // Moved this out of default and into &.multi-choice to avoid height transition on single action bar.
+                transition: height 0.7s ease-out 0.15s, opacity 0.7s ease-out 0.15s;
+                opacity: 1;
+                height: @story-reader-interaction-bar-inner-wrap-height-default;
+            }
+        }
+    }
+
+    &.end-reached {
+        &.interaction-mode-action {
+            .story-reader-interaction-bar-top {
+                .story-reader-interaction-end {
+                    display: flex;
+                }        
+            }
+        }
+    }
+
+    &.appear-column-compact {
+        .story-reader-interaction-bar-inner-wrap {
+            .story-reader-interaction-bar-actions-wrap,
+            .story-reader-info-panel {
+                width: @story-text-block-row-compact-width * 2;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    &.appear-row-compact-text,
+    &.appear-row-compact {
+        .story-reader-interaction-bar-inner-wrap {
+            .story-reader-interaction-bar-actions-wrap,
+            .story-reader-info-panel {
+                width: @story-text-block-row-compact-width;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+body.disable-scroll {
+    .story-reader-interaction-bar {
+        // Prevent layout shift to content when scroll bar is disabled. 
+        padding-right: @expected-scroll-bar-width;
+    }
+}
+
+@media screen and (max-width: @screen-width-mobile) {
+    // On small screen sizes, we create a comparable row mode from column mode.
+
+    .story-reader-interaction-bar {
+        &.appear-column-compact {
+            .story-reader-interaction-bar-inner-wrap {
+                .story-reader-interaction-bar-actions-wrap,
+                .story-reader-info-panel {
+                    width: @story-text-block-row-compact-width;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: @screen-width-m) {
+    .story-reader-interaction-bar {
+        &.multi-choice,
+        &.interaction-mode-info {
+            &:hover,
+            &:focus-within {
+                .story-reader-interaction-bar-inner-wrap {
+                    height: @story-reader-interaction-bar-inner-wrap-height-small;
+                }
+            }
+        }
+    }
+}

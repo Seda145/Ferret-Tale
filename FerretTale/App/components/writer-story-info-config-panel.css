@@ -1,0 +1,12 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-info-config-panel {
+  flex-direction: column;
+}
+.writer-story-info-config-panel fieldset .info-config-panel-info-fields-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 30px;
+  gap: 15px;
+}

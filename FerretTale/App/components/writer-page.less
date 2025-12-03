@@ -1,0 +1,54 @@
+@import 'var.less';
+
+
+
+.writer-page {
+    margin-left: -@padding-column * 2;
+    margin-right: -@padding-column * 2;
+    
+    .writer-page-wrap {
+        display: flex;
+        flex-direction: column;
+        // Hardcoded to add enough height that reconstructing large components does not cause a scroll jump during deletion.
+        // I added a bit extra so that we can scroll down on browser fullscreen mode 1080 height and get the writer page toolbar on top while editing in content mode.
+        // That seems the least distracting, compared to having to scroll up or down manually, or scroll jumping unintentionally.
+        min-height: 950px;
+
+        .writer-page-toolbar-top {
+            .writer-page-toolbar-button-wrap {
+                .writer-page-toolbar-select-wrap {
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    gap: @padding-column;
+                }
+            }
+        }
+    }
+}
+
+body.injected-page-WriterPage {
+    // Add a vertical scrollbar by default to prevent obvious layout jump after story continues.
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: @screen-width-m) {
+    .writer-page {
+        .writer-page-wrap {
+            .writer-page-toolbar-top {
+                .writer-page-toolbar-button-wrap {
+                    align-items: start;
+
+                    .writer-page-toolbar-select-wrap {
+                        flex-direction: column;
+
+                        select {
+                            flex: 1;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

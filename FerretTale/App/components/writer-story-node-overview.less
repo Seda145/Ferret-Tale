@@ -1,0 +1,39 @@
+@import 'var.less';
+
+
+
+.writer-story-node-overview {
+    display: flex;
+    flex-direction: column;
+
+    .writer-story-node-canvas-wrap {
+        display: flex;
+        flex-direction: row;
+        // height: @padding-column * 12;
+        position: relative;
+        // Chrome: Centered alignment causes scroll height to be miscalculated, resulting in half visible node rows if large.
+        align-items: start;
+        
+        .writer-page-canvas {
+            position: absolute;
+        }
+    
+        .writer-story-node-wrap {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+    
+            .writer-story-node-tree {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex: 1;
+
+                .writer-story-node-row {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+/* Color Branding */
+/* Media rules */
+.story-reader-interaction-bar {
+  user-select: none;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(18, 0, 6, 0.7);
+  border-top: thin solid #4b0019;
+  transition: background-color 0.2s ease-in 1s;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: thin solid #000;
+  height: 45px;
+  justify-content: center;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .content-separator-wrap {
+  display: none;
+  transform: rotateZ(180deg);
+  padding-top: 0px;
+  transition: opacity 0.3s ease-in 0.2s;
+  margin: 0px;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .content-separator-wrap .content-separator {
+  margin: 0px;
+  background-color: #7a2a45;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .content-separator-wrap .content-separator .separator-icon {
+  top: -5px;
+  background-color: #7a2a45;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .content-separator-wrap:hover {
+  cursor: default;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .content-separator-wrap:hover .content-separator .separator-icon {
+  top: -5px;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .story-reader-interaction-single {
+  display: none;
+  flex: 1;
+  align-items: center;
+  transition: opacity 0.2s ease-in;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .story-reader-interaction-single p {
+  margin: 0px;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-top .story-reader-interaction-single:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-inner-wrap {
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap {
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 15px;
+  display: none;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-inner-wrap .story-reader-info-panel {
+  display: none;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-mode-button-wrap {
+  position: relative;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-mode-button-wrap .story-reader-interaction-bar-mode-button {
+  position: absolute;
+  bottom: 10px;
+  left: 2px;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  transition: background-color 0.15s ease;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-mode-button-wrap .story-reader-interaction-bar-mode-button:hover {
+  background-color: #ebe2e5;
+  cursor: pointer;
+}
+.story-reader-interaction-bar .story-reader-interaction-bar-mode-button-wrap .story-reader-interaction-bar-mode-button.disabled {
+  display: none;
+}
+.story-reader-interaction-bar.interaction-mode-action .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap {
+  display: flex;
+}
+.story-reader-interaction-bar.interaction-mode-info .story-reader-interaction-bar-inner-wrap .story-reader-info-panel {
+  display: flex;
+}
+.story-reader-interaction-bar.interaction-mode-info .story-reader-interaction-bar-mode-button-wrap .story-reader-interaction-bar-mode-button {
+  background-color: #ebe2e5;
+}
+.story-reader-interaction-bar.continue-choice.interaction-mode-action .story-reader-interaction-bar-top .story-reader-interaction-continue {
+  display: flex;
+}
+.story-reader-interaction-bar.multi-choice .story-reader-interaction-bar-top .content-separator-wrap,
+.story-reader-interaction-bar.interaction-mode-info .story-reader-interaction-bar-top .content-separator-wrap {
+  display: block;
+}
+.story-reader-interaction-bar.multi-choice .story-reader-interaction-bar-inner-wrap,
+.story-reader-interaction-bar.interaction-mode-info .story-reader-interaction-bar-inner-wrap {
+  transition: height 0.7s ease-out 0.3s, opacity 0.7s ease-in;
+  overflow-y: scroll;
+  padding-right: 15px;
+}
+.story-reader-interaction-bar.multi-choice:hover,
+.story-reader-interaction-bar.interaction-mode-info:hover,
+.story-reader-interaction-bar.multi-choice:focus-within,
+.story-reader-interaction-bar.interaction-mode-info:focus-within {
+  background-color: #120006;
+  transition: background-color 0.2s ease-in 0s, height 0.8s ease;
+}
+.story-reader-interaction-bar.multi-choice:hover .story-reader-interaction-bar-top .content-separator-wrap,
+.story-reader-interaction-bar.interaction-mode-info:hover .story-reader-interaction-bar-top .content-separator-wrap,
+.story-reader-interaction-bar.multi-choice:focus-within .story-reader-interaction-bar-top .content-separator-wrap,
+.story-reader-interaction-bar.interaction-mode-info:focus-within .story-reader-interaction-bar-top .content-separator-wrap {
+  opacity: 0.2;
+}
+.story-reader-interaction-bar.multi-choice:hover .story-reader-interaction-bar-top .content-separator-wrap .content-separator .separator-icon,
+.story-reader-interaction-bar.interaction-mode-info:hover .story-reader-interaction-bar-top .content-separator-wrap .content-separator .separator-icon,
+.story-reader-interaction-bar.multi-choice:focus-within .story-reader-interaction-bar-top .content-separator-wrap .content-separator .separator-icon,
+.story-reader-interaction-bar.interaction-mode-info:focus-within .story-reader-interaction-bar-top .content-separator-wrap .content-separator .separator-icon {
+  top: -5px;
+}
+.story-reader-interaction-bar.multi-choice:hover .story-reader-interaction-bar-top .content-separator-wrap:hover .content-separator .separator-icon,
+.story-reader-interaction-bar.interaction-mode-info:hover .story-reader-interaction-bar-top .content-separator-wrap:hover .content-separator .separator-icon,
+.story-reader-interaction-bar.multi-choice:focus-within .story-reader-interaction-bar-top .content-separator-wrap:hover .content-separator .separator-icon,
+.story-reader-interaction-bar.interaction-mode-info:focus-within .story-reader-interaction-bar-top .content-separator-wrap:hover .content-separator .separator-icon {
+  top: -5px;
+}
+.story-reader-interaction-bar.multi-choice:hover .story-reader-interaction-bar-inner-wrap,
+.story-reader-interaction-bar.interaction-mode-info:hover .story-reader-interaction-bar-inner-wrap,
+.story-reader-interaction-bar.multi-choice:focus-within .story-reader-interaction-bar-inner-wrap,
+.story-reader-interaction-bar.interaction-mode-info:focus-within .story-reader-interaction-bar-inner-wrap {
+  transition: height 0.7s ease-out 0.15s, opacity 0.7s ease-out 0.15s;
+  opacity: 1;
+  height: 300px;
+}
+.story-reader-interaction-bar.end-reached.interaction-mode-action .story-reader-interaction-bar-top .story-reader-interaction-end {
+  display: flex;
+}
+.story-reader-interaction-bar.appear-column-compact .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap,
+.story-reader-interaction-bar.appear-column-compact .story-reader-interaction-bar-inner-wrap .story-reader-info-panel {
+  width: 1200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.story-reader-interaction-bar.appear-row-compact-text .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap,
+.story-reader-interaction-bar.appear-row-compact .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap,
+.story-reader-interaction-bar.appear-row-compact-text .story-reader-interaction-bar-inner-wrap .story-reader-info-panel,
+.story-reader-interaction-bar.appear-row-compact .story-reader-interaction-bar-inner-wrap .story-reader-info-panel {
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.disable-scroll .story-reader-interaction-bar {
+  padding-right: 15px;
+}
+@media screen and (max-width: 1024px) {
+  .story-reader-interaction-bar.appear-column-compact .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap,
+  .story-reader-interaction-bar.appear-column-compact .story-reader-interaction-bar-inner-wrap .story-reader-info-panel {
+    width: 600px;
+  }
+}
+@media screen and (max-height: 768px) {
+  .story-reader-interaction-bar.multi-choice:hover .story-reader-interaction-bar-inner-wrap,
+  .story-reader-interaction-bar.interaction-mode-info:hover .story-reader-interaction-bar-inner-wrap,
+  .story-reader-interaction-bar.multi-choice:focus-within .story-reader-interaction-bar-inner-wrap,
+  .story-reader-interaction-bar.interaction-mode-info:focus-within .story-reader-interaction-bar-inner-wrap {
+    height: 200px;
+  }
+}

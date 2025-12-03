@@ -1,0 +1,62 @@
+@import 'var.less';
+@import 'footer-var.less';
+
+
+footer {
+    background-color: @color-2-dark;
+    border-top: thin solid @color-1;
+    // Adapting this z-index to low index page content variations that shouldn't go over the footer.
+    z-index: 3;
+
+    .footer-wrap {
+        display: flex;
+        flex-direction: row;
+        padding: @padding-half-column @padding-column;
+
+        .footer-notice {
+            display: flex;
+            font-size: @font-size-tiny;
+            margin: 0;
+            color: @color-1-near-white-a7;
+    
+            &:first-child {
+                flex: 1;
+            }
+        }
+    
+        &.max-width-wrap {
+            padding-left: @max-width-wrap-horizontal-padding-footer;
+            padding-right: @max-width-wrap-horizontal-padding-footer;
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-s) {
+    footer {
+        .footer-wrap {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+    }
+}
+
+// Old design: StoryReaderInteractionBar lands sticky on top of footer when scroll to the bottom to the page (see css, js).
+// Problem: Getting annoyed with StoryReaderInteractionBar, while footer adds no usefulness to the story page.
+// Fix: Remove footer. Currently only shows copyright notice which you all saw multiple times before this page.
+body.injected-page-StoryPage {
+    footer {
+        display: none;
+    }
+}
+
+body.disable-scroll {
+    footer {
+        .footer-wrap {
+            &.max-width-wrap {
+                // Prevent layout shift to content when scroll bar is disabled. 
+                padding-right: @max-width-wrap-horizontal-padding-footer + @expected-scroll-bar-width;
+            }
+        }
+    }
+}

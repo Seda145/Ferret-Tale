@@ -1,0 +1,30 @@
+@import 'var.less';
+
+
+
+.writer-story-info-field {
+    display: flex;
+    flex-direction: row;
+    gap: @padding-column * 2;
+    width: 100%;
+    background-color: @color-1-dark;
+    padding: @padding-one-third;
+    border-radius: @border-radius-large;
+    border-top: thin solid @color-1-light;
+
+    .config-field {
+        flex: 1;
+
+        span {
+            // Decided to hide this entirely, now that I added the copy button for functionality.
+            display: none;
+        }
+
+        input {
+            // Added padding to match button height.
+            // Input height now differs from defaults though.
+            padding-top: @padding-two-third;
+            padding-bottom: @padding-two-third;
+        }
+    }
+}

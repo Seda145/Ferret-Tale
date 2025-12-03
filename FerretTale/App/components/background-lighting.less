@@ -1,0 +1,19 @@
+@import 'var.less';
+
+
+
+.background-lighting {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+body.disable-scroll {
+	.background-lighting {
+		// Fill up space when scroll bar is gone.
+		margin-right: @expected-scroll-bar-width;
+	}
+}

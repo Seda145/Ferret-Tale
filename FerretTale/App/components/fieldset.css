@@ -1,0 +1,19 @@
+/* Color Branding */
+/* Media rules */
+fieldset {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: thin solid #7a2a45;
+}
+fieldset legend {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  user-select: none;
+}

@@ -1,0 +1,22 @@
+@import 'var.less';
+
+
+
+fieldset {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: @padding-two-third;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: thin solid @color-1-light;
+
+    legend {
+        padding-left: @padding-one-third;
+        padding-right: @padding-one-third;
+        margin-bottom: @padding-two-third;
+        font-weight: bold;
+        user-select: none;
+    }
+}

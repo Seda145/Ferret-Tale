@@ -1,0 +1,15 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-about-config-panel .config-panel-side .config-field span {
+  flex: none;
+  width: 250px;
+}
+.writer-story-about-config-panel .config-panel-side .config-field-textarea textarea {
+  min-height: 363px;
+  resize: none;
+}
+@media screen and (max-width: 768px) {
+  .writer-story-about-config-panel .config-panel-side .config-field span {
+    width: 125px;
+  }
+}

@@ -1,0 +1,22 @@
+/* Color Branding */
+/* Media rules */
+.config-field {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+.config-field span {
+  user-select: none;
+  min-height: 30px;
+  flex: 1;
+}
+.config-field span:hover {
+  cursor: help;
+}
+@media screen and (max-width: 500px) {
+  .config-field {
+    flex-direction: column;
+    align-items: start;
+  }
+}

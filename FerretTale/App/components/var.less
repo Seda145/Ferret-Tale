@@ -1,0 +1,69 @@
+/* Color Branding */
+@color-1-near-white:  #ebe2e5;
+@color-1-light:       #7a2a45;
+@color-1:             #4b0019;
+@color-1-dark:        #25010c;
+@color-1-darkest:     #120006;
+// @color-2-dark:        #03040d;
+// @color-2-dark:        #050002;
+@color-2-dark:        #120006;
+// Used just for a deep dark background transition:
+@color-3:               #0a0003;
+
+// whites and blacks, here to avoid using # or rgb in master so that can be scanned for missing vars.
+@color-black: #000;
+@color-transparent: fade(@color-black, 0%);
+
+// Color branding conversion to alpha.
+@color-1-near-white-a25: fade(@color-1-near-white, 25%);
+@color-1-near-white-a7: fade(@color-1-near-white, 70%);
+@color-1-darkest-a85: fade(@color-1-darkest, 85%);
+@color-2-dark-a7: fade(@color-2-dark, 70%);
+@color-black-a95: fade(@color-black, 95%);
+@color-black-a7: fade(@color-black, 70%);
+
+// Font size
+@font-size-tiny: 1rem;
+@font-size-smaller: 1.15rem;
+@font-size-default: 1.2rem;
+@font-size-h-scale: 1.15;
+@font-size-h1: calc(@font-size-default * @font-size-h-scale * @font-size-h-scale * @font-size-h-scale * @font-size-h-scale);
+@font-size-h2: calc(@font-size-default * @font-size-h-scale * @font-size-h-scale * @font-size-h-scale);
+@font-size-h3: calc(@font-size-default * @font-size-h-scale * @font-size-h-scale);
+@font-size-h4: calc(@font-size-default * @font-size-h-scale);
+@font-size-h5: @font-size-default;
+@font-size-h6: calc(@font-size-default / @font-size-h-scale);
+
+// Line height
+@line-height: 1.618;
+
+// Padding
+@padding-column: 15px;
+@padding-two-third: 10px;
+@padding-half-column: 7px;
+@padding-one-third: 5px;
+@max-width-wrap-horizontal-padding: @padding-column * 2;
+
+// Input
+@checkbox-size: 20px;
+@input-min-height-default: 30px;
+
+// Width
+@width-max-page-main: 1680px;
+@expected-scroll-bar-width: 15px;
+
+// Border radius
+@border-radius-smallest: 2px;
+@border-radius-small: 3px;
+@border-radius-normal: 5px;
+@border-radius-large: 10px;
+
+/* Media rules */
+@screen-width-s: 500px;
+@screen-width-m: 768px;
+@screen-width-l: 1024px;
+@screen-width-xl: 1368px;
+// Keep screen-width-mobile in sync with js in app.js!
+// The header's mobile nav menu fixes itself to the right of the screen.
+// Large numbers look bad on high resolution / zoomed out screens.
+@screen-width-mobile: 1024px;

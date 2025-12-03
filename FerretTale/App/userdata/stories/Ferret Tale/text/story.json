@@ -1,0 +1,423 @@
+{
+  "about": {
+    "author": "Roy Wierer",
+    "genre": "Fantasy",
+    "age": "All",
+    "version": "1.00",
+    "copyright": "Roy Wierer",
+    "language": "English",
+    "description": "The story about a little white ferret called Maisie. Maisie dreams about exploring the world, 'A nomad, curious and free'. She leaves her home and, filled with bravery, she runs into a meadow. After sundown, she is unable to find her way back. Here she will meet an unlikely friend and face unexpected dangers.\n\n\nThis is my app's demo story. Inspect it to learn how to write your own stories with my app.\n\nFerret Tale is inspired by my (ferret) friend Spook, also a white ferret. Ferrets are full of curiosity, joy and energy. They can be stubborn and impulsive, leading to silly situations, or, great adventures.",
+    "storyCoverImage": "story_cover_image.jpg",
+    "readingLayout": "Row (compact)",
+    "showEmptyTextColumn": true,
+    "hideTitleWhileReading": false
+  },
+  "story": {
+    "0": {
+      "next": [
+        "1"
+      ],
+      "ambience": "ambience_global.mp3",
+      "image": "intro.jpg",
+      "text": "There once was a little white ferret named Maisie. A nomad she'd be, curious and free. The warmth of the sun on her little pink nose filled her with bravery. For a moment she closed her eyes, and thought of everything she would find."
+    },
+    "1": {
+      "next": [
+        "2"
+      ],
+      "text": "Then she wandered into the meadow. One step, two steps, Maisie starts running, with the sun to watch over her."
+    },
+    "2": {
+      "next": [
+        "3"
+      ],
+      "music": "music_she_runs_she_digs_she_dances.mp3",
+      "music_once": true,
+      "text": "She runs, she digs, and dances, to celebrate every new discovery. A flower! A hill! A bucket full of berries!"
+    },
+    "3": {
+      "next": [
+        "4"
+      ],
+      "text": "She runs, she digs, and dances, until the sun goes down."
+    },
+    "4": {
+      "next": [
+        "5"
+      ],
+      "music": "music_getting_dark.mp3",
+      "sound": "sound_maisie_voice_global_7step.mp3",
+      "speaker": "Maisie",
+      "text": "It's getting dark... It's scaring me. All I want now is... to be found."
+    },
+    "5": {
+      "next": [
+        "6"
+      ],
+      "text": "Maisie had never slept outside her own warm bed before. Where would she sleep?",
+      "add_info": [
+        "ui_maisie_never_slept_outside_where_sleep"
+      ]
+    },
+    "6": {
+      "next": [
+        "7",
+        "32"
+      ],
+      "sound": "sound_maisie_hello.mp3",
+      "speaker": "Maisie, ???",
+      "text": "Hello? Hello?! She shouts into the distance. ssshsshh ssshsshh something responds. Or is it just the gentle sound of wind moving through the trees?"
+    },
+    "7": {
+      "next": [
+        "8"
+      ],
+      "text": "Maisie thinks she is all alone, and lies down on the ground for a moment to think."
+    },
+    "8": {
+      "next": [
+        "9"
+      ],
+      "music": "stop",
+      "sound": "sound_maisie_ling_eww_ahh.mp3",
+      "speaker": "Maisie, ???",
+      "text": "Suddenly, her little pink nose touches something very slimy. EWWW! She yells. AAAAAAAH! Don't eat me! Something in front of her yells. Something, no someone, very slimy."
+    },
+    "9": {
+      "next": [
+        "10"
+      ],
+      "text": "Maisie looks at her new discovery, but just this time she does not run, dig or dance to celebrate it. She nearly cries, maybe of happiness, now that she has found someone to talk to. But what, no who, is this?"
+    },
+    "10": {
+      "next": [
+        "11"
+      ],
+      "sound": "sound_maisie_voice_global_3step.mp3",
+      "speaker": "Maisie",
+      "text": "I... I won't eat you, Maisie says. She notices the prettiest little house on the creature's back, unlike anything she has ever seen before."
+    },
+    "11": {
+      "next": [
+        "12"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "???",
+      "text": "Her shaky voice convinces him that Maisie is not a threat. He answers: Well well, no need to shout or stare. Have you never seen a snail before? You see, I move from place to place, but right now I just want to go to bed."
+    },
+    "12": {
+      "next": [
+        "13",
+        "35",
+        "37"
+      ],
+      "rnd_next": true,
+      "sound": "sound_maisie_voice_global_7step.mp3",
+      "speaker": "Maisie",
+      "text": "A traveler?? Well... I... I'm lost. I don't know how to find the way home."
+    },
+    "13": {
+      "next": [
+        "14"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "???",
+      "text": "The creature before Maisie observes her as he attempts to walk around her, as fast as a snail can. Oh! You have no house with you! Who are you?",
+      "not_info": [
+        "maisie_asked_help_twice"
+      ]
+    },
+    "14": {
+      "next": [
+        "15"
+      ],
+      "sound": "sound_maisie_voice_global_6step.mp3",
+      "speaker": "Maisie",
+      "text": "I'm Maisie, I'm exploring the world! ... But I'm lost. Who are you?"
+    },
+    "15": {
+      "next": [
+        "16"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "I'm Ling. 'Ling of the Misty Lake!'"
+    },
+    "16": {
+      "next": [
+        "17"
+      ],
+      "sound": "sound_maisie_voice_global_3step.mp3",
+      "speaker": "Maisie",
+      "text": "The Misty Lake?"
+    },
+    "17": {
+      "next": [
+        "18"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "Yes, Misty Lake! I am the great Ling who travelled Misty Lake to Ferret Garden and back!",
+      "add_info": [
+        "ui_maisie_met_ling"
+      ]
+    },
+    "18": {
+      "next": [
+        "19"
+      ],
+      "sound": "sound_maisie_voice_global_6step.mp3",
+      "speaker": "Maisie",
+      "text": "Ferret garden? Misty lake? Could Misty Lake be the fish pond next to my home?"
+    },
+    "19": {
+      "next": [
+        "20"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "You have travelled the misty lake? Ling asks Maisie in disbelief."
+    },
+    "20": {
+      "next": [
+        "21"
+      ],
+      "sound": "sound_maisie_voice_global_7step.mp3",
+      "speaker": "Maisie",
+      "text": "Well, I did go around it..."
+    },
+    "21": {
+      "next": [
+        "22"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "Ohh! The distance!"
+    },
+    "22": {
+      "next": [
+        "23"
+      ],
+      "text": "Then Maisie realized that for Ling's little body, the fish pond must look huge, but she didn't want to say something that would upset Ling. Instead, she tries to remember exactly how she got here."
+    },
+    "23": {
+      "next": [
+        "24"
+      ],
+      "sound": "sound_maisie_voice_global_7step.mp3",
+      "speaker": "Maisie",
+      "text": "Left my bed, past the pond, into the meadow... a hill! Then I danced around a bucket full of berries. After that I kept running and dancing until the sun went down. Then..."
+    },
+    "24": {
+      "next": [
+        "25"
+      ],
+      "music": "music_memories.mp3",
+      "music_once": true,
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "Oh! Berry Hill! My family lives there, and I know how to get there. Wait here for a moment."
+    },
+    "25": {
+      "next": [
+        "26"
+      ],
+      "sound": "sound_furniture_move.mp3",
+      "text": "Ling disappears into his little snail house, and for a minute, everything is very quiet. Wait, is that the sound of little furniture moving?",
+      "add_info": [
+        "ui_ling_spoke_of_berry_hill"
+      ]
+    },
+    "26": {
+      "next": [
+        "27"
+      ],
+      "text": "Maisie lies down and closes her eyes for a moment, and imagines the pretty decorations on the inside of Ling's house. Maisie is feeling very sleepy..."
+    },
+    "27": {
+      "next": [
+        "28"
+      ],
+      "sound": "sound_ling_ah_yes_there_it_is.mp3",
+      "text": "A muffled 'Ah yes, there it is!' comes from inside Ling's home."
+    },
+    "28": {
+      "next": [
+        "29"
+      ],
+      "text": "Ling interrupts Maisie's short dream by climbing on top of her nose. She opens her eyes, holds her breath, and waits for the tickling to stop. Maisie notices a shiny round object on Ling's body.",
+      "add_info": [
+        "ui_collected_compass"
+      ]
+    },
+    "29": {
+      "next": [
+        "30"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "Ling",
+      "text": "We can find the way to Berry Hill with my compass, and you would help me by bringing me there."
+    },
+    "30": {
+      "next": [
+        "31"
+      ],
+      "sound": "sound_maisie_voice_global_6step.mp3",
+      "speaker": "Maisie",
+      "text": "Ok, let's go to Berry Hill!"
+    },
+    "31": {
+      "music": "music_outro.mp3",
+      "music_once": true,
+      "text": "Maisie didn't feel scared anymore. Ling's experience and compass, together with her speed, made an excellent team.\r\n\r\nThey were able to avoid danger and reach Berry Hill quite quickly. From the top of the hill, Maisie saw her own house. She thanked Ling, who then returned to his family on the hill.\r\n\r\nMaisie returned to her own bed safely, and dreamt of new adventures with Ling.\r\n\r\n\r\nThe End"
+    },
+    "32": {
+      "next": [
+        "33"
+      ],
+      "add_info": [
+        "maisie_asked_help_twice"
+      ],
+      "sound": "sound_maisie_will_someone_help.mp3",
+      "speaker": "Maisie",
+      "text": "Will someone help me?"
+    },
+    "33": {
+      "next": [
+        "34"
+      ],
+      "music": "stop",
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "???",
+      "text": "Are you in trouble? Someone whispers. Maisie looks down and sees the prettiest little house, unlike anything she has seen before."
+    },
+    "34": {
+      "next": [
+        "11"
+      ],
+      "text": "Just this time she does not run, dig or dance to celebrate her new discovery. She nearly cries, maybe of happiness, now that she has found someone to talk to. But what, no who, is this?"
+    },
+    "35": {
+      "next": [
+        "39"
+      ],
+      "has_info": [
+        "maisie_asked_help_twice"
+      ],
+      "text": "Maisie notices her calls for help also attracted two scary looking birds. From a distance she spots a tiny silver dinner plate under one's feathers.",
+      "add_info": [
+        "ui_maisie_attracted_hungry_birds"
+      ]
+    },
+    "36": {
+      "next": [
+        "38"
+      ],
+      "sound": "sound_ling_voice_global.mp3",
+      "speaker": "???",
+      "text": "Oh! Birds! I'd rather keep my distance from them. Well, they are gone now."
+    },
+    "37": {
+      "has_info": [
+        "maisie_asked_help_twice"
+      ],
+      "text": "Maisie notices her calls for help also attracted a curious mouse, but the mouse leaves as quickly as he arrived.",
+      "next": [
+        "38"
+      ]
+    },
+    "38": {
+      "next": [
+        "14"
+      ],
+      "text": "The creature before Maisie observes her as he attempts to walk around her, as fast as a snail can. Oh! You have no house with you! Who are you?",
+      "speaker": "???",
+      "sound": "sound_ling_voice_global.mp3"
+    },
+    "39": {
+      "speaker": "Maisie",
+      "text": "Oh no... They aren't looking for dinner are they?",
+      "next": [
+        "40"
+      ]
+    },
+    "40": {
+      "text": "The birds realize that it was Maisie who called for help, and fly away. Ferrets are not on their menu.",
+      "next": [
+        "36"
+      ]
+    }
+  },
+  "infoPanels": {
+    "0": {
+      "name": "Inventory",
+      "infoDescriptions": {
+        "0": {
+          "header_size": "Extra Large",
+          "header": "My collection"
+        },
+        "1": {
+          "header_size": "Normal",
+          "header": "Diary",
+          "description": "I write about all my adventures, dreams and thoughts in this little red book.",
+          "image": "item_diary.png",
+          "image_mode": "Column"
+        },
+        "2": {
+          "header_size": "Normal",
+          "image_mode": "Column",
+          "header": "Compass",
+          "description": "This is Ling's compass. We can use it to find the way back to Berry Hill.",
+          "image": "item_compass.png",
+          "has_info": [
+            "ui_collected_compass"
+          ]
+        }
+      }
+    },
+    "1": {
+      "name": "Diary",
+      "infoDescriptions": {
+        "0": {
+          "header_size": "Extra Large",
+          "header": "My diary"
+        },
+        "1": {
+          "header_size": "Normal",
+          "has_info": [
+            "ui_maisie_never_slept_outside_where_sleep"
+          ],
+          "header": "Where would I sleep?",
+          "description": "It's getting dark, and I think I'm lost. I've never slept outside before. Where would I sleep?"
+        },
+        "2": {
+          "header_size": "Normal",
+          "has_info": [
+            "ui_maisie_attracted_hungry_birds"
+          ],
+          "header": "That was dangerous.",
+          "description": "My calls for help attracted two scary birds, but they didn't want to eat me."
+        },
+        "3": {
+          "header_size": "Normal",
+          "header": "I met Ling the snail.",
+          "has_info": [
+            "ui_maisie_met_ling"
+          ],
+          "description": "I met a brave snail called Ling. He travelled through what he calls the Misty Lake and Ferret Garden, which is a great distance for his small body."
+        },
+        "4": {
+          "header_size": "Normal",
+          "has_info": [
+            "ui_ling_spoke_of_berry_hill"
+          ],
+          "header": "Ling knows the way back!",
+          "description": "Ling listened to my story, and he realized I had been to Berry Hill, where his family lives. He can help me find my way back home."
+        }
+      },
+      "has_info": [
+        "ui_maisie_never_slept_outside_where_sleep"
+      ]
+    }
+  }
+}

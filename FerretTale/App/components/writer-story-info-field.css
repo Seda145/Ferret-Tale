@@ -1,0 +1,22 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-info-field {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  background-color: #25010c;
+  padding: 5px;
+  border-radius: 10px;
+  border-top: thin solid #7a2a45;
+}
+.writer-story-info-field .config-field {
+  flex: 1;
+}
+.writer-story-info-field .config-field span {
+  display: none;
+}
+.writer-story-info-field .config-field input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

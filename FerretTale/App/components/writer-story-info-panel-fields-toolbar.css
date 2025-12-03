@@ -1,0 +1,20 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-info-panel-fields-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.writer-story-info-panel-fields-toolbar .writer-story-info-panel-fields-toolbar-button-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.writer-story-info-panel-fields-toolbar .writer-story-info-panel-fields-toolbar-button-wrap .button-add,
+.writer-story-info-panel-fields-toolbar .writer-story-info-panel-fields-toolbar-button-wrap .button-delete {
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+  font-size: 1rem;
+}

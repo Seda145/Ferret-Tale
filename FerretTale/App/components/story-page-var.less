@@ -1,0 +1,13 @@
+@import 'story-reader-interaction-bar-var.less';
+@import 'var.less';
+
+
+
+// I think a text the width of around 500px (+- 12 words a row) is easy on the eyes.
+@story-text-block-row-compact-width: 600px;
+// Depending on screen size I add extra margin so that the interaction bar doesn't cover the story text.
+// This is an hardcoded estimation because there are a lot of non var heights and paddings to add up.
+// This extra space is visible even when the bar is collapsed, so too much also isn't good.
+// Also important to mention that more margin than below results in scroll space where text is not visible on screen heights below 500px.
+@story-text-block-wrap-margin-bottom-default: @story-reader-interaction-bar-inner-wrap-height-default + (@padding-column * 6);
+@story-text-block-wrap-margin-bottom-small: @story-reader-interaction-bar-inner-wrap-height-small + (@padding-column * 6);

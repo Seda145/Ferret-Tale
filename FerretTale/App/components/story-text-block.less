@@ -1,0 +1,150 @@
+@import 'var.less';
+@import 'story-page-var.less';
+@import 'header-var.less';
+
+
+
+.story-text-block {
+    scroll-margin-top: @header-bottom-height + @padding-column * 2;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease-in 0s;
+
+    .info-section {
+        h6 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        h6:not(:empty) {
+            background-color: @color-3;
+            box-shadow: 2px 1px 3px @color-1 inset;
+            margin-bottom: @padding-column * 2;
+            margin-top: 0px;
+            padding: @padding-two-third @padding-column;
+            border-radius: @border-radius-small;
+        }
+    }
+
+    .content-section {
+        display: flex;
+        flex-direction: row;
+        gap: @padding-column * 3;
+
+        .text-section,
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .text-section {
+            p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                white-space: break-spaces;
+            }
+        }
+
+        .image-section {
+            .image-wrap {
+                text-align: center;
+                width: 100%;
+                // This margin pushes down the image to the bottom of the text displayed on the left column.
+                // This might be less distracting / less of a spoiler to the text if not read yet.
+                margin-top: auto;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.story-text-block-fade-in {
+        opacity: 1;
+    }
+
+    &.story-text-block-fade-in:not(:last-child) {
+        .info-section,
+        .text-section {
+            // Reducing opacity a bit of previous text. Easier to look at.
+            opacity: 0.75;
+        }
+    }
+
+    &.appear-column-compact {
+        width: @story-text-block-row-compact-width * 2;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+    &.appear-row, 
+    &.appear-row-compact-text, 
+    &.appear-row-compact {
+        .content-section {
+            flex-direction: column;
+        }
+    }
+
+    &.appear-row-compact-text {
+        .info-section {
+            width: @story-text-block-row-compact-width;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-section {
+            .text-section {
+                width: @story-text-block-row-compact-width;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    &.appear-row-compact {
+        width: @story-text-block-row-compact-width;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: @screen-width-mobile) {
+    // On small screen sizes, we create a comparable row mode from column mode.
+
+    .story-text-block {
+        &.appear-column-compact {
+            width: 100%;
+
+            .info-section {
+                width: @story-text-block-row-compact-width;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            .content-section {
+                width: @story-text-block-row-compact-width;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                // But of course change the flex direction.
+                flex-direction: column;
+            }
+        }
+
+        &.appear-column {
+            .content-section {
+                // But of course change the flex direction.
+                flex-direction: column;
+            }
+        }
+    }
+}

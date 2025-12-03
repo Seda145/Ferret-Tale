@@ -1,0 +1,7 @@
+/* Color Branding */
+/* Media rules */
+.config-field-text input {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}

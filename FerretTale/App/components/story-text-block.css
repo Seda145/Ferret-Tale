@@ -1,0 +1,103 @@
+/* Color Branding */
+/* Media rules */
+.story-text-block {
+  scroll-margin-top: 90px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 1s ease-in 0s;
+}
+.story-text-block .info-section h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.story-text-block .info-section h6:not(:empty) {
+  background-color: #0a0003;
+  box-shadow: 2px 1px 3px #4b0019 inset;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+.story-text-block .content-section {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+}
+.story-text-block .content-section .text-section,
+.story-text-block .content-section .image-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.story-text-block .content-section .text-section p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: break-spaces;
+}
+.story-text-block .content-section .image-section .image-wrap {
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+.story-text-block .content-section .image-section .image-wrap img {
+  width: 100%;
+}
+.story-text-block.story-text-block-fade-in {
+  opacity: 1;
+}
+.story-text-block.story-text-block-fade-in:not(:last-child) .info-section,
+.story-text-block.story-text-block-fade-in:not(:last-child) .text-section {
+  opacity: 0.75;
+}
+.story-text-block.appear-column-compact {
+  width: 1200px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.story-text-block.appear-row .content-section,
+.story-text-block.appear-row-compact-text .content-section,
+.story-text-block.appear-row-compact .content-section {
+  flex-direction: column;
+}
+.story-text-block.appear-row-compact-text .info-section {
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.story-text-block.appear-row-compact-text .content-section .text-section {
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.story-text-block.appear-row-compact {
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 1024px) {
+  .story-text-block.appear-column-compact {
+    width: 100%;
+  }
+  .story-text-block.appear-column-compact .info-section {
+    width: 600px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .story-text-block.appear-column-compact .content-section {
+    width: 600px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+  }
+  .story-text-block.appear-column .content-section {
+    flex-direction: column;
+  }
+}

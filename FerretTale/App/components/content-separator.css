@@ -1,0 +1,54 @@
+/* Color Branding */
+/* Media rules */
+.content-separator-wrap {
+  display: block;
+  width: 45px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.content-separator-wrap .content-separator {
+  height: 3px;
+  background-color: #ebe2e5;
+  border-radius: 2px;
+  position: relative;
+  margin-bottom: 30px;
+  transition: background-color 0.25s ease 0.2s;
+}
+.content-separator-wrap .content-separator .separator-icon {
+  transform: rotateZ(45deg);
+  background-color: #ebe2e5;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -5px;
+  transition: top 0.2s ease 0.2s, background-color 0.25s ease 0.2s;
+}
+.content-separator-wrap .content-separator .separator-icon:after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #120006;
+}
+.content-separator-wrap:hover {
+  cursor: pointer;
+}
+.content-separator-wrap:hover .content-separator {
+  background-color: #ebe2e5;
+  transition: background-color 0.25s ease 0s;
+}
+.content-separator-wrap:hover .content-separator .separator-icon {
+  top: -18px;
+  background-color: #ebe2e5;
+  transition: top 0.2s ease-in 0s, background-color 0.25s ease 0s;
+}
+.content-separator-wrap.content-separator-wrap-endmain .content-separator {
+  transform: rotateX(180deg);
+}

@@ -1,0 +1,26 @@
+@import 'var.less';
+
+
+
+.story-list-page-extra-info-set {
+    display: flex;
+    flex-direction: row;
+    gap: @padding-column;
+
+    .story-list-page-extra-info-set-side {
+        text-align: left;
+
+        p {
+            font-size: @font-size-tiny;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: @color-1-near-white-a7;
+        }
+
+        &:first-child {
+            // I'm reserving a fixed width for the left side, just to align rows. 
+            // Apparently doesn't work if the second side is huge (but who would do that).
+            width: 75px;
+        }
+    }
+}

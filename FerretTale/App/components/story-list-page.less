@@ -1,0 +1,247 @@
+@import 'var.less';
+@import 'story-list-page-var.less';
+
+
+
+.story-list-page {
+    .story-list-entry {
+        display: flex;
+        flex-direction: column;
+
+        .story-side-wrap {
+            display: flex;
+            flex-direction: row;
+            gap: @padding-column;
+
+            .story-description-side {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+
+                .story-description {
+                    width: 500px;
+                    max-width: 100%;
+                    // Aligned margin top to top of font with top of story cover image to the right.
+                    margin-top: 8px;
+                    margin-bottom: @padding-column * 2;
+                    height: @story-description-height-pc;
+                    white-space: break-spaces;
+                    overflow: auto;
+                }
+            }
+
+            .story-cover-side {
+                display: flex;
+                flex-direction: row;
+
+                .btn-nav-story-entry {
+                    visibility: hidden;
+                    display: flex;
+                    width: @padding-column * 3;
+                    height: @padding-column * 3;
+                    user-select: none;
+                    margin: auto;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .btn-nav-story-entry-prev {
+                    transform: rotateZ(90deg);
+                }
+
+                .btn-nav-story-entry-next {
+                    transform: rotateZ(-90deg);
+                }
+
+                .cover-story-entry-wrap {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    text-align: center;
+                    vertical-align: middle;
+                    gap: @padding-column;
+
+                    .cover-story-entry {
+                        flex: 1;
+                        padding: @padding-column;
+                        align-content: center;
+                        user-select: none;
+
+                        .cover-story-entry-image {
+                            border-radius: @border-radius-normal;
+                            vertical-align: middle;
+                            height: @story-entry-image-height;
+                            width: @story-entry-image-width;
+                        }
+                    }
+
+                    .story-list-entry-button-wrap {
+                        display: flex;
+                        gap: @padding-column;
+                        padding-left: @padding-column;
+                        padding-right: @padding-column;
+
+                        .btn-default-story-entry {
+                            display: flex;
+                            flex: 1;
+                            text-align: center;
+                            flex-direction: column;
+                            border-radius: @border-radius-large;
+                            border-top: medium solid @color-1-light;
+                            color: @color-1-near-white;
+                            padding: @padding-two-third @padding-column;
+                            user-select: none;
+
+                            p {
+                                margin: 0;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .btn-read-story-entry {
+                            background-color: @color-1-dark;
+                            transition: background-color 0.2s, color 0.2s, border-color 0.1s linear 0.05s;
+
+                            &:hover {
+                                background-color: @color-1-near-white;
+                                border-color: @color-1-near-white;
+                                color: @color-2-dark;
+                            }
+                        }
+
+                        .btn-restart-story-entry {
+                            background-image: linear-gradient(90deg, @color-1-near-white 0% 49.5%, @color-1-dark 50% 100%);
+                            // It would be pos 100 size 200 but I'm getting a visible edge on certain screen resolutions?
+                            background-position-x: 99%;
+                            background-size: 203%;
+                            transition: none;
+
+                            &:not(.enabled) {
+                                display: none;
+                            }
+
+                            &.pressing {
+                                background-position-x: 0%;
+                                border-color: @color-1-near-white;
+                                color: @color-2-dark;
+                                // Keep transition time in sync with JS (StoryListPage) value that is the time required for the button to be held down.
+                                transition: background-position 1s linear, color 0.5s linear 0.2s, border-color 0.8s linear 0.2s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.story-list-entry-can-navigate {
+            .story-side-wrap {
+                .story-cover-side {
+                    .btn-nav-story-entry {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-l), (max-height: @screen-width-m) {
+    .story-list-page {
+        .story-list-entry {
+            .story-name {
+                text-align: center;
+                // hardcoded this to reserve two lines of text in height.
+                // This prevents a layout shift if a title is a bit long, but not huge.
+                min-height: 85px;
+            }
+
+            .story-side-wrap {
+                flex-direction: column-reverse;
+
+                .story-description-side {
+                    height: @story-description-height-mobile;
+                    max-height: unset;
+                    max-width: 100%;
+                    margin: auto;
+                    width: @story-description-side-width-mobile;
+                    text-align: center;
+
+                    .story-description {
+                        width: 100%;
+                        margin-top: @padding-column * 4;
+                        margin-bottom: @padding-column * 4;
+                        height: auto;
+                    }
+
+                    .story-extra-info {
+                        width: auto;
+                        margin-left: auto; 
+                        margin-right: auto;
+                    }
+                }
+
+                .story-cover-side {
+                    .cover-story-entry-wrap {
+                        .cover-story-entry {
+                            .cover-story-entry-image {
+                                max-width: 100%;
+                                // Must hardcode the values to avoid jumping on loading image.
+                                height: @story-entry-image-height-small;
+                                width: @story-entry-image-width-small;
+                            }
+                        }
+
+                        .story-list-entry-button-wrap {
+                            flex-direction: column;
+                            align-items: center;
+
+                            .btn-default-story-entry {
+                                width: @story-entry-image-width-small;
+                            }
+
+                            .btn-restart-story-entry {
+                                // In this block I still want to hide the button if not .enabled, but I want it to take up space vertically.
+                                // I used display instead of "visibility" on the default state because visibility didn't collapse flex.
+                                &:not(.enabled) {
+                                    visibility: collapse;
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .story-list-page {
+        .story-list-entry {
+            .story-side-wrap {
+                .story-cover-side {
+                    .cover-story-entry-wrap {
+                        .cover-story-entry {
+                            .cover-story-entry-image {
+                                // Must hardcode the values to avoid jumping on loading image.
+                                height: @story-entry-image-height-tiny;
+                                width: @story-entry-image-width-tiny;
+                            }
+                        }
+
+                        .story-list-entry-button-wrap {
+                            .btn-default-story-entry {
+                                width: @story-entry-image-width-tiny;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

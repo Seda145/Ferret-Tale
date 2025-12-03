@@ -1,0 +1,37 @@
+@import 'var.less';
+
+
+
+.writer-story-info-panels-config-panel {
+    // So I can use the fieldset design in full width and use its padding.
+    // This gives a consistent look compared to the other config panels on the writer page.
+    flex-direction: column;
+
+    fieldset {
+        .info-panels-config-panel-info-panel-wrap {
+            // Having config-panel nested in here lets me write text to the left of the info fields on large screens,
+            // And changes that layout on smaller screens.
+            // The fieldset legend can remain on top in any case.
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: @padding-column * 2;
+        }
+    }
+
+    .writer-story-info-panels-config-toolbar {
+        // Add some space.
+        margin-top: @padding-column * 3;
+        margin-bottom: @padding-column;
+    }
+
+    .writer-story-info-panels-config-toolbar,
+    .info-panels-config-panel-info-panel-wrap {
+        // I'm making an exception on padding added externally, by removing that.
+        // This way this content takes up full width again, like its parent content on WriterPage.
+        // (toolbar the same width, content same width etc.)
+        // This makes it easier to reserve space for toolbar button / select elements.
+        margin-left: -@padding-column * 2;
+        margin-right: -@padding-column * 2;
+    }
+}

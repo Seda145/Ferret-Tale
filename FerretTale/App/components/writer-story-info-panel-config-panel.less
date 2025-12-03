@@ -1,0 +1,36 @@
+@import 'var.less';
+
+
+
+.writer-story-info-panel-config-panel {
+    flex-direction: column;
+    
+    .writer-story-info-panel-config-panel-config-fields-wrap,
+    .writer-story-info-panel-config-panel-info-panel-fields-wrap { 
+        display: flex;
+        flex-direction: column;
+        gap: @padding-column;
+    }
+
+    .writer-story-info-panel-config-panel-config-fields-wrap {
+        margin-bottom: @padding-column;
+        // Adding padding to match position with panels below.
+        padding-left: @padding-column;
+        padding-right: @padding-column;
+
+        .config-field {
+            span {
+                flex: none;
+                // Hardcoded to current span content. 
+                // Equals width on other panels shown.
+                width: 100px;
+            }
+        }
+    }
+
+    .writer-story-info-panel-config-panel-info-panel-fields-wrap {
+        // The info panel can be super short if there are no info fields to display.
+        // This min-height looks better and adds vertical space to keep scroll position.
+        flex: 1;
+    }
+}

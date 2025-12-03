@@ -1,0 +1,31 @@
+@import 'var.less';
+
+
+
+.story-reader-interaction-action {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    gap: @padding-column;
+    margin-top: @padding-column;
+    margin-bottom: @padding-column;
+
+    .story-reader-interaction-action-index {
+        padding-left: @padding-one-third;
+        padding-right: @padding-one-third;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    &:hover,
+    &:focus-within {
+        cursor: pointer;
+
+        .story-reader-interaction-action-index {
+            background-color: @color-1;
+            border-radius: @border-radius-small;
+        }
+    }
+}

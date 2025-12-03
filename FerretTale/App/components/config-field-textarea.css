@@ -1,0 +1,10 @@
+/* Color Branding */
+/* Media rules */
+.config-field-textarea {
+  flex: 1;
+  align-items: normal;
+}
+.config-field-textarea textarea {
+  flex: 1;
+  width: 100%;
+}

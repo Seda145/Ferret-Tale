@@ -1,0 +1,23 @@
+@import 'var.less';
+
+
+
+.writer-story-info-config-panel {
+    // So I can use the fieldset design in full width and use its padding.
+    // This gives a consistent look compared to the other config panels on the writer page.
+    flex-direction: column;
+
+    fieldset {
+        .info-config-panel-info-fields-wrap {
+            // Having config-panel nested in here lets me write text to the left of the info fields on large screens,
+            // And changes that layout on smaller screens.
+            // The fieldset legend can remain on top in any case.
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            // Add some padding under the text.
+            padding-top: @padding-column * 2;
+            gap: @padding-column;
+        }
+    }
+}

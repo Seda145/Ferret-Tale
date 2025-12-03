@@ -1,0 +1,46 @@
+@import 'var.less';
+@import 'story-page-var.less';
+
+
+.story-page {
+    user-select: none;
+
+    .story-page-title {
+        text-align: center;
+        margin-bottom: @padding-column * 5;
+        padding-bottom: @padding-column;
+        border-bottom: medium solid @color-1-dark;
+
+        &.disabled {
+            display: none;
+        }
+    }
+    
+    .story-text-block-wrap {
+        display: flex;
+        margin-bottom: @story-text-block-wrap-margin-bottom-default;
+        flex-direction: column;
+        gap: @padding-column * 4;
+    }
+}
+
+@media screen and (max-height: @screen-width-m) {
+    .story-page {
+        .story-text-block-wrap {
+            margin-bottom: @story-text-block-wrap-margin-bottom-small;
+        }
+    }
+}
+
+body.injected-page-StoryPage {
+    // Add a vertical scrollbar by default to prevent obvious layout jump after story continues.
+    overflow-y: scroll;
+
+    main {   
+        // I fix the background on this page so that you don't see a little color shift when you press continue during reading.
+        // While small, it's annoying to my eyes.
+        // Having it fixed compared to default state currently is barely noticeable (only if you look for it), 
+        // since it's just a dark vertical color gradient.
+        background-attachment: fixed;
+    }
+}

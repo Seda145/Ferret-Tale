@@ -1,0 +1,38 @@
+/* Color Branding */
+/* Media rules */
+footer {
+  background-color: #120006;
+  border-top: thin solid #4b0019;
+  z-index: 3;
+}
+footer .footer-wrap {
+  display: flex;
+  flex-direction: row;
+  padding: 7px 15px;
+}
+footer .footer-wrap .footer-notice {
+  display: flex;
+  font-size: 1rem;
+  margin: 0;
+  color: rgba(235, 226, 229, 0.7);
+}
+footer .footer-wrap .footer-notice:first-child {
+  flex: 1;
+}
+footer .footer-wrap.max-width-wrap {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (max-width: 500px) {
+  footer .footer-wrap {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+body.injected-page-StoryPage footer {
+  display: none;
+}
+body.disable-scroll footer .footer-wrap.max-width-wrap {
+  padding-right: 45px;
+}

@@ -1,0 +1,66 @@
+@import 'var.less';
+@import 'header-var.less';
+
+
+
+.help-item {
+    .help-title {
+        scroll-margin-top: @header-scroll-margin-top-offset;
+        padding-left: @padding-column * 3;
+        padding-right: @padding-column * 3;
+        padding-top: @padding-column;
+        padding-bottom: @padding-column;
+        margin-left: -@padding-two-third * 2;
+        margin-right: -@padding-two-third * 2;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        filter: drop-shadow(0px 0px 2px @color-2-dark);
+        background-image: linear-gradient(0deg, @color-transparent 0%, @color-1-dark 20% 100%);
+        background-attachment: fixed;
+        border-top: medium solid @color-1-light;
+        border-radius: @border-radius-large;
+        filter: drop-shadow(0px 3px 2px @color-black);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .help-content-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: @padding-column;
+
+        .help-description-wrap {
+            .help-description {
+                white-space: break-spaces;
+                width: 750px;
+                max-width: 100%;
+                // Since I made everything non selectable by default,
+                // I want to make some help item text selectable so that users can copy provided scripts etc.
+                user-select: text;
+            }
+        }
+
+        .help-image-wrap {
+            align-self: start;
+            margin-top: @padding-column * 3;
+
+            img {
+                border-radius: @border-radius-small;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-width-xl) {
+    .help-item {
+        .help-content-wrap {
+            flex-direction: column-reverse;
+
+            .help-image-wrap {
+                margin-top: @padding-column * 3;
+            }
+        }
+    }
+}

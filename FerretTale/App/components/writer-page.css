@@ -1,0 +1,32 @@
+/* Color Branding */
+/* Media rules */
+.writer-page {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+.writer-page .writer-page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 950px;
+}
+.writer-page .writer-page-wrap .writer-page-toolbar-top .writer-page-toolbar-button-wrap .writer-page-toolbar-select-wrap {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 15px;
+}
+body.injected-page-WriterPage {
+  overflow-y: scroll;
+}
+@media screen and (max-width: 768px) {
+  .writer-page .writer-page-wrap .writer-page-toolbar-top .writer-page-toolbar-button-wrap {
+    align-items: start;
+  }
+  .writer-page .writer-page-wrap .writer-page-toolbar-top .writer-page-toolbar-button-wrap .writer-page-toolbar-select-wrap {
+    flex-direction: column;
+  }
+  .writer-page .writer-page-wrap .writer-page-toolbar-top .writer-page-toolbar-button-wrap .writer-page-toolbar-select-wrap select {
+    flex: 1;
+    width: auto;
+  }
+}

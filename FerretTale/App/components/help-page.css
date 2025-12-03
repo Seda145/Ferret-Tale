@@ -1,0 +1,8 @@
+/* Color Branding */
+/* Media rules */
+.help-page .help-item-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 75px;
+}

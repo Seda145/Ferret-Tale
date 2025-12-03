@@ -1,0 +1,169 @@
+/* Color Branding */
+/* Media rules */
+.story-list-page .story-list-entry {
+  display: flex;
+  flex-direction: column;
+}
+.story-list-page .story-list-entry .story-side-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-description-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-description-side .story-description {
+  width: 500px;
+  max-width: 100%;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  height: 400px;
+  white-space: break-spaces;
+  overflow: auto;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side {
+  display: flex;
+  flex-direction: row;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .btn-nav-story-entry {
+  visibility: hidden;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  user-select: none;
+  margin: auto;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .btn-nav-story-entry p {
+  margin: 0;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .btn-nav-story-entry-prev {
+  transform: rotateZ(90deg);
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .btn-nav-story-entry-next {
+  transform: rotateZ(-90deg);
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  gap: 15px;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .cover-story-entry {
+  flex: 1;
+  padding: 15px;
+  align-content: center;
+  user-select: none;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .cover-story-entry .cover-story-entry-image {
+  border-radius: 5px;
+  vertical-align: middle;
+  height: 600px;
+  width: 400px;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap {
+  display: flex;
+  gap: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-default-story-entry {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border-top: medium solid #7a2a45;
+  color: #ebe2e5;
+  padding: 10px 15px;
+  user-select: none;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-default-story-entry p {
+  margin: 0;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-default-story-entry:hover {
+  cursor: pointer;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-read-story-entry {
+  background-color: #25010c;
+  transition: background-color 0.2s, color 0.2s, border-color 0.1s linear 0.05s;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-read-story-entry:hover {
+  background-color: #ebe2e5;
+  border-color: #ebe2e5;
+  color: #120006;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-restart-story-entry {
+  background-image: linear-gradient(90deg, #ebe2e5 0% 49.5%, #25010c 50% 100%);
+  background-position-x: 99%;
+  background-size: 203%;
+  transition: none;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-restart-story-entry:not(.enabled) {
+  display: none;
+}
+.story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-restart-story-entry.pressing {
+  background-position-x: 0%;
+  border-color: #ebe2e5;
+  color: #120006;
+  transition: background-position 1s linear, color 0.5s linear 0.2s, border-color 0.8s linear 0.2s;
+}
+.story-list-page .story-list-entry.story-list-entry-can-navigate .story-side-wrap .story-cover-side .btn-nav-story-entry {
+  visibility: visible;
+}
+@media screen and (max-width: 1024px), (max-height: 768px) {
+  .story-list-page .story-list-entry .story-name {
+    text-align: center;
+    min-height: 85px;
+  }
+  .story-list-page .story-list-entry .story-side-wrap {
+    flex-direction: column-reverse;
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-description-side {
+    height: auto;
+    max-height: unset;
+    max-width: 100%;
+    margin: auto;
+    width: 500px;
+    text-align: center;
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-description-side .story-description {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: auto;
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-description-side .story-extra-info {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .cover-story-entry .cover-story-entry-image {
+    max-width: 100%;
+    height: calc(600px / 2);
+    width: calc(400px / 2);
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-default-story-entry {
+    width: calc(400px / 2);
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-restart-story-entry:not(.enabled) {
+    visibility: collapse;
+    display: flex;
+  }
+}
+@media screen and (max-width: 400px) {
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .cover-story-entry .cover-story-entry-image {
+    height: calc(calc(600px / 2) / 2);
+    width: calc(calc(400px / 2) / 2);
+  }
+  .story-list-page .story-list-entry .story-side-wrap .story-cover-side .cover-story-entry-wrap .story-list-entry-button-wrap .btn-default-story-entry {
+    width: calc(calc(400px / 2) / 2);
+  }
+}

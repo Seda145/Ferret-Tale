@@ -1,0 +1,9 @@
+/* Color Branding */
+/* Media rules */
+.story-reader-info-panel {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 45px;
+  padding-bottom: 75px;
+}

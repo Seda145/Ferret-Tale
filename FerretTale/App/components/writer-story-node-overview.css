@@ -1,0 +1,30 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-node-overview {
+  display: flex;
+  flex-direction: column;
+}
+.writer-story-node-overview .writer-story-node-canvas-wrap {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: start;
+}
+.writer-story-node-overview .writer-story-node-canvas-wrap .writer-page-canvas {
+  position: absolute;
+}
+.writer-story-node-overview .writer-story-node-canvas-wrap .writer-story-node-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.writer-story-node-overview .writer-story-node-canvas-wrap .writer-story-node-wrap .writer-story-node-tree {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+.writer-story-node-overview .writer-story-node-canvas-wrap .writer-story-node-wrap .writer-story-node-tree .writer-story-node-row {
+  display: flex;
+  flex-direction: column;
+}

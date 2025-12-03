@@ -1,0 +1,32 @@
+/* Color Branding */
+/* Media rules */
+.config-page {
+  margin-bottom: 90px;
+}
+.config-page .config-fieldset-wrap {
+  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 500px;
+  max-width: 100%;
+}
+.config-page .config-fieldset-wrap .config-field-select select {
+  flex: none;
+  width: 200px;
+}
+.config-page .config-fieldset-wrap .config-field-range input {
+  flex: none;
+  width: 200px;
+}
+@media screen and (max-width: 500px) {
+  .config-page .config-fieldset-wrap .config-field-select select {
+    flex: 1;
+    width: 100%;
+  }
+  .config-page .config-fieldset-wrap .config-field-range input {
+    flex: 1;
+    width: 100%;
+  }
+}

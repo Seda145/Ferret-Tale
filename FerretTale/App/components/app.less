@@ -1,0 +1,271 @@
+@import 'var.less';
+
+
+
+/*
+*
+*	Layout
+*
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    // Override padding that browser adds by default, to match closest app padding.
+    padding-left: @padding-column * 2;
+}
+
+img {
+    // To ensure that ratio is kept, when setting both width and height properties on an img element.
+    height: auto;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+.max-width-wrap {
+    margin: 0 auto;
+    max-width: @width-max-page-main;
+    width: 100%;
+    padding-left: @max-width-wrap-horizontal-padding;
+    padding-right: @max-width-wrap-horizontal-padding;
+}
+
+.flex-fill {
+    flex: 1;
+}
+
+/*
+*
+*	General
+*
+*/
+
+* {
+    /* Sorted highest priority to lowest. System availability is checked per character of text. */
+    font-family: "Roboto", "Helvetica", "Verdana", "Arial", "Tahoma", "system-ui", "Georgia", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    // The header is fixed over scrollable content, so give the content scroll an offset if needed.
+    font-size: 14px;
+    scrollbar-color: @color-1-light @color-1-darkest;
+}
+
+body {
+    font-size: @font-size-default;
+    line-height: @line-height;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    // set up default text color
+    color: @color-1-near-white;
+    // Seems to color sliders on chrome.
+    accent-color: @color-1;
+    // For now I'm disabling user select everywhere. 
+    // I can't think of any downsides but I'm keeping the other user-select where I had them for now.
+    // The upside is that unintended user selection will no longer happen when navigating pages.
+    // Chrome seems to sometimes trigger text selection when injecting new page content, which is not ok.
+    user-select: none;
+
+    a,
+    a:visited {
+        color: @color-1-near-white;
+    }
+}
+
+#app-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+input[type="checkbox"],
+input[type="file"] {
+    // "file" cursor doesn't work on Chrome?
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+input[type="range"] {
+    &:hover {
+        // These cursors looks awful but it's supposed to be used.
+        // cursor: grab;
+        cursor: grabbing;
+    }
+}
+
+select {
+    // Or it won't be inherited from body on chrome.
+    font-size: @font-size-default;
+}
+
+// input[type="number"] {
+    // TODO how to style the increment / decrement arrows?
+// }
+
+input[type="text"],
+input[type="number"],
+textarea {
+    background-color: @color-2-dark;
+    color: @color-1-near-white;
+    padding: @padding-one-third;
+    border: thin solid @color-1-light;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+textarea {
+    // Would add checkbox here as well,
+    // but chrome doesn't take it. Seems to have some radius of its own.
+    // Slider (input range) already got radius as well.
+    border-radius: @border-radius-normal;
+}
+
+select,
+textarea,
+input:not([type="checkbox"]) {
+    min-height: @input-min-height-default;
+}
+
+input[type="checkbox"] {
+    height: @checkbox-size;
+    width: @checkbox-size;
+    margin: 0px;
+}
+
+body.disable-scroll {
+    overflow: hidden !important;
+
+    main {
+        // Prevent layout shift to content when scroll bar is disabled. 
+        // This assumes we had a scroll bar in the first place (or that this padding does not matter to current content otherwise).
+        // Fine for the current content of the app.
+        padding-right: @expected-scroll-bar-width;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    // Take full available height between header and footer.
+    flex: 1;
+    // Guard against content pushing main horizontally beyond (usually extremely tiny) screens, which deforms space on navigation menu and header.
+    overflow: hidden;
+    // Sync with load-userdata-page.less > main. Made the center transparent there for animation purposes.
+    background-image: linear-gradient(0deg, @color-3 0%, @color-black 15% 80%, @color-3);
+}
+
+@media screen and (max-width: @screen-width-mobile) {
+    main {
+        // minimal height of 100vh so that scrolling past the header banner is always possible.
+        // This is required for the mobile navigation menu to pop up on the right position and for it to use the entire height properly (among with the bottom header.).
+        min-height: 100vh;
+    }
+}
+
+
+/*
+*
+*	Buttons
+*
+*/
+
+.button-type-1,
+.button-type-2 {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.button-type-1,
+.button-type-2 {
+    padding: @padding-column;
+    border-radius: @border-radius-normal;
+    background-color: @color-1-dark;
+    border-top: medium solid @color-1-light;
+    border-left: none;
+    border-right: none;
+    border-bottom: thin solid @color-black;
+    color: @color-1-near-white;
+    transition: background-color 0.15s;
+    user-select: none;
+    box-shadow: 0px 0px 5px @color-1-light inset;
+    // Added below 3 lines to force centering on some buttons that didn't otherwise.
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: @color-1-light;
+    }
+
+    &:active {
+        background-color: @color-1-darkest;
+    }
+}
+
+.button-type-2 {
+    padding: @padding-one-third @padding-two-third;
+}
+
+
+/*
+*
+*	Fonts
+*
+*/
+
+h1 {
+    font-size: @font-size-h1;
+}
+
+h2 {
+    font-size: @font-size-h2;
+}
+
+h3 {
+    font-size: @font-size-h3;
+}
+
+h4 {
+    font-size: @font-size-h4;
+}
+
+h5 {
+    font-size: @font-size-h5;
+}
+
+h6 {
+    font-size: @font-size-h6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: calc(@line-height * 1.5rem);
+}
+
+a {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: @color-1;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration-thickness: 7px;
+        text-decoration-color: @color-1-light;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+}

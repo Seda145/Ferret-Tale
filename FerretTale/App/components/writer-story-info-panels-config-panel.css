@@ -1,0 +1,20 @@
+/* Color Branding */
+/* Media rules */
+.writer-story-info-panels-config-panel {
+  flex-direction: column;
+}
+.writer-story-info-panels-config-panel fieldset .info-panels-config-panel-info-panel-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 30px;
+}
+.writer-story-info-panels-config-panel .writer-story-info-panels-config-toolbar {
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+.writer-story-info-panels-config-panel .writer-story-info-panels-config-toolbar,
+.writer-story-info-panels-config-panel .info-panels-config-panel-info-panel-wrap {
+  margin-left: -30px;
+  margin-right: -30px;
+}

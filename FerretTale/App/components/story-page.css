@@ -1,0 +1,31 @@
+/* Color Branding */
+/* Media rules */
+.story-page {
+  user-select: none;
+}
+.story-page .story-page-title {
+  text-align: center;
+  margin-bottom: 75px;
+  padding-bottom: 15px;
+  border-bottom: medium solid #25010c;
+}
+.story-page .story-page-title.disabled {
+  display: none;
+}
+.story-page .story-text-block-wrap {
+  display: flex;
+  margin-bottom: 390px;
+  flex-direction: column;
+  gap: 60px;
+}
+@media screen and (max-height: 768px) {
+  .story-page .story-text-block-wrap {
+    margin-bottom: 290px;
+  }
+}
+body.injected-page-StoryPage {
+  overflow-y: scroll;
+}
+body.injected-page-StoryPage main {
+  background-attachment: fixed;
+}

@@ -1,0 +1,35 @@
+@import 'var.less';
+
+
+
+.config-panel {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding: @padding-column;
+    gap: @padding-column * 3;
+    background-color: @color-1-darkest;
+    border-bottom-left-radius: @border-radius-normal;
+    border-bottom-right-radius: @border-radius-normal;
+
+    p,
+    h5 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        user-select: none;
+    }
+
+    .config-panel-side {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: @padding-two-third;
+    }
+}
+
+@media screen and (max-width: @screen-width-l) {
+    .config-panel {
+        flex-direction: column;
+        gap: @padding-column;
+    }
+}

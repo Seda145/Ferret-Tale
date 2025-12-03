@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<!-- Setting black body background here prevents white flicker on load. Also affects the scroll-bar color in firefox. -->
+	<body style="background-color:black;">
+		<div data-component="app"></div>
+
+		<!-- The .less > .css converter can't exclude the -var.less files from conversion. -var.css are junk files (not required). -->
+
+		<!-- -->
+		<!-- Load globally used independend utilities. -->
+		<!-- -->
+
+		<script src="./components/path-utils.js"></script>
+
+		<script src="./components/math-utils.js"></script>
+		
+		<script src="./components/download-utils.js"></script>
+
+		<script src="./components/config-field-utils.js"></script>
+
+		<script src="./components/config-data-importer-utils.js"></script>
+		
+		<script src="./components/reader-data-importer-utils.js"></script>
+
+		<script src="./components/writer-data-importer-utils.js"></script>
+
+		<script src="./components/ui-utils.js"></script>
+
+		<!-- -->
+		<!-- Define app early. Don't start it. -->
+		<!-- -->
+
+		<link rel="stylesheet" href="./components/app.css"> 
+		<script src="./components/app.js"></script>
+		<script>
+			const app = new App();
+		</script>
+
+		<!-- -->
+		<!-- Early load components. -->
+		<!-- -->
+
+		<script src="./components/config-data.js"></script>
+
+		<script src="./components/reader-data.js"></script>
+
+		<script src="./components/writer-data.js"></script>
+
+		<script src="./components/userdata-porter.js"></script>
+
+		<link rel="stylesheet" href="./components/background-lighting.css"> 
+		<script src="./components/background-lighting.js"></script>
+		
+		<link rel="stylesheet" href="./components/fieldset.css"> 
+		<script src="./components/fieldset.js"></script>
+		
+		<link rel="stylesheet" href="./components/config-field.css">
+
+		<link rel="stylesheet" href="./components/config-field-number.css">
+		<script src="./components/config-field-number.js"></script>
+
+		<link rel="stylesheet" href="./components/config-field-checkbox.css">
+		<script src="./components/config-field-checkbox.js"></script>
+
+		<link rel="stylesheet" href="./components/config-field-range.css">
+		<script src="./components/config-field-range.js"></script>
+
+		<link rel="stylesheet" href="./components/config-field-select.css">
+		<script src="./components/config-field-select.js"></script>
+
+		<link rel="stylesheet" href="./components/config-field-text.css">
+		<script src="./components/config-field-text.js"></script>
+		
+		<link rel="stylesheet" href="./components/config-field-textarea.css">
+		<script src="./components/config-field-textarea.js"></script>
+
+		<script src="./components/navigation.js"></script>
+
+		<script src="./components/audio-track.js"></script>
+
+		<script src="./components/audio-controller.js"></script>
+
+		<link rel="stylesheet" href="./components/content-separator.css"> 
+		<script src="./components/content-separator.js"></script>
+
+		<link rel="stylesheet" href="./components/config-panel.css">
+
+		<!-- -->
+		<!-- Load injectable pages -->
+		<!-- -->
+
+		<script src="./components/help-item-link.js"></script>
+
+		<link rel="stylesheet" href="./components/help-item.css"> 
+		<script src="./components/help-item.js"></script>
+
+		<link rel="stylesheet" href="./components/help-page.css">
+		<script src="./components/help-page.js"></script>
+
+		<link rel="stylesheet" href="./components/config-page.css">
+		<script src="./components/config-page.js"></script>
+
+		<link rel="stylesheet" href="./components/load-userdata-page.css"> 
+		<script src="./components/load-userdata-page.js"></script>
+
+		<link rel="stylesheet" href="./components/story-list-page-extra-info-set.css">
+		<script src="./components/story-list-page-extra-info-set.js"></script>
+
+		<link rel="stylesheet" href="./components/story-list-page.css"> 
+		<script src="./components/story-list-page.js"></script>
+
+		<link rel="stylesheet" href="./components/story-text-block.css"> 
+		<script src="./components/story-text-block.js"></script>
+
+		<link rel="stylesheet" href="./components/story-reader-interaction-action.css"> 
+		<script src="./components/story-reader-interaction-action.js"></script>
+
+		<link rel="stylesheet" href="./components/story-reader-interaction-bar.css"> 
+		<script src="./components/story-reader-interaction-bar.js"></script>
+
+		<link rel="stylesheet" href="./components/story-reader-info-panel-info.css"> 
+		<script src="./components/story-reader-info-panel-info.js"></script>
+
+		<link rel="stylesheet" href="./components/story-reader-info-panel.css"> 
+		<script src="./components/story-reader-info-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/story-page.css"> 
+		<script src="./components/story-page.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-node.css">
+		<script src="./components/writer-story-node.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-about-config-panel.css">
+		<script src="./components/writer-story-about-config-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-node-overview.css">
+		<script src="./components/writer-story-node-overview.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-node-config-panel.css">
+		<script src="./components/writer-story-node-config-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-info-panel-fields-toolbar.css">
+		<script src="./components/writer-story-info-panel-fields-toolbar.js"></script>
+		
+		<link rel="stylesheet" href="./components/writer-story-info-field.css">
+		<script src="./components/writer-story-info-field.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-info-config-panel.css">
+		<script src="./components/writer-story-info-config-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-info-panel-field.css">
+		<script src="./components/writer-story-info-panel-field.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-info-panel-config-panel.css">
+		<script src="./components/writer-story-info-panel-config-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-story-info-panels-config-panel.css">
+		<script src="./components/writer-story-info-panels-config-panel.js"></script>
+
+		<link rel="stylesheet" href="./components/writer-page-toolbar.css"> 
+
+		<link rel="stylesheet" href="./components/writer-page.css"> 
+		<script src="./components/writer-page.js"></script>
+
+		<!-- -->
+		<!-- Load page injector. -->
+		<!-- -->
+
+		<link rel="stylesheet" href="./components/page-injector.css"> 
+		<script src="./components/page-injector.js"></script>
+
+		<!-- -->
+		<!-- Late load components. -->
+		<!-- -->
+
+		<script src="./components/nav-item.js"></script>
+
+		<script src="./components/nav-item-save-progress.js"></script>
+		
+		<link rel="stylesheet" href="./components/header.css"> 
+		<script src="./components/header.js"></script>
+
+		<link rel="stylesheet" href="./components/footer.css"> 
+		<script src="./components/footer.js"></script>
+
+		<!-- -->
+		<!-- Start app. -->
+		<!-- -->
+
+		<script>
+			app.create(document);
+		</script>
+	</body>
+</html>

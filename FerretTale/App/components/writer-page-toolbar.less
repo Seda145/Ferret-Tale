@@ -1,0 +1,99 @@
+@import 'var.less';
+@import 'header-var.less';
+@import 'writer-page-toolbar-var.less';
+
+
+
+// TODO some external component specific selectors in here should move out, or rather merge into generic.
+.writer-page-toolbar {
+    scroll-margin-top: @header-scroll-margin-top-offset;
+    display: flex;
+    // flex: 1;
+    flex-direction: column;
+    align-items: end;
+    background-color: @color-1-dark;
+    border-top-left-radius: @border-radius-normal;
+    border-top-right-radius: @border-radius-normal;
+    border-top: medium solid @color-1-light;
+    border-bottom: medium solid @color-1-dark;
+    user-select: none;
+
+    .writer-page-toolbar-button-wrap {
+        gap: @padding-column;
+        padding-left: @padding-column;
+        padding-right: @padding-column;
+        padding-top: @padding-two-third;
+        padding-bottom: @padding-two-third;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .button-type-1,
+        .button-type-2 {
+            // I want all buttons by default the same width, just for visuals.
+            width: @writer-page-toolbar-button-width;
+            text-align: center;
+    
+            &.disabled {
+                visibility: hidden;
+            }
+        }
+    
+        .writer-page-toolbar-button {
+            // These are interactable "buttons" but not styled like button-type-X.
+            display: flex;
+            gap: @padding-one-third;
+            align-items: center;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .writer-page-toolbar-go-to-span {
+            &:hover {
+                cursor: help;
+            }
+        }
+
+        select[name="select-story"],
+        select[name="select-edit-mode"],
+        select[name="select-panel"] {
+            padding-top: @padding-two-third;
+            padding-bottom: @padding-two-third;
+            border: none;
+            background-color: @color-1-darkest;
+            text-align: left;
+            // 100% doesn't seem right, but it makes flex behave (element does not grow out of bounds).
+            width: 100%;
+        }
+
+        select[name="select-edit-mode"] {
+            width: @writer-page-toolbar-button-width;
+        }
+
+        [name="button-go-to-input"] {
+            width: @padding-column * 6;
+        }
+    }
+
+    &.writer-page-toolbar-alt {
+        border-top: medium solid @color-1-dark;
+        border-bottom: medium solid @color-black;
+        background-color: @color-1-darkest;
+    }
+
+    &.writer-page-toolbar-alt-2 {
+        border-top: none;
+        border-bottom: none;
+        background-color: @color-transparent;
+        opacity: 0.5;
+        transition: opacity 0.5s ease-in 0.75s;
+
+        &:hover {
+            opacity: 1;
+            transition: opacity 0.2s ease-in 0.1s;
+        }
+    }
+}

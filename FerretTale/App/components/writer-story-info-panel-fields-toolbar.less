@@ -1,0 +1,24 @@
+@import 'var.less';
+
+
+
+.writer-story-info-panel-fields-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .writer-story-info-panel-fields-toolbar-button-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: @padding-column;
+
+        .button-add,
+        .button-delete {
+            padding: 0px;
+            height: @padding-column * 2;
+            width: @padding-column * 2;
+            font-size: @font-size-tiny;
+        }
+    }
+}

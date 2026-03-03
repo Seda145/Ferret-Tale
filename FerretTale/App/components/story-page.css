@@ -25,6 +25,7 @@
 }
 body.injected-page-StoryPage {
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 body.injected-page-StoryPage main {
   background-attachment: fixed;

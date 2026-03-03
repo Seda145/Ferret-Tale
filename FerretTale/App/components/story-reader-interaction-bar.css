@@ -108,7 +108,7 @@
 .story-reader-interaction-bar.interaction-mode-info .story-reader-interaction-bar-inner-wrap {
   transition: height 0.7s ease-out 0.3s, opacity 0.7s ease-in;
   overflow-y: scroll;
-  padding-right: 15px;
+  scrollbar-width: none;
 }
 .story-reader-interaction-bar.multi-choice:hover,
 .story-reader-interaction-bar.interaction-mode-info:hover,
@@ -161,9 +161,6 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-body.disable-scroll .story-reader-interaction-bar {
-  padding-right: 15px;
 }
 @media screen and (max-width: 1024px) {
   .story-reader-interaction-bar.appear-column-compact .story-reader-interaction-bar-inner-wrap .story-reader-interaction-bar-actions-wrap,

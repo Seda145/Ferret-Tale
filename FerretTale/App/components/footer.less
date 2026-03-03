@@ -49,14 +49,3 @@ body.injected-page-StoryPage {
         display: none;
     }
 }
-
-body.disable-scroll {
-    footer {
-        .footer-wrap {
-            &.max-width-wrap {
-                // Prevent layout shift to content when scroll bar is disabled. 
-                padding-right: @max-width-wrap-horizontal-padding-footer + @expected-scroll-bar-width;
-            }
-        }
-    }
-}

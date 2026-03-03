@@ -130,6 +130,7 @@ header .mobile-nav-menu {
   flex-direction: row;
   align-items: center;
   overflow: auto;
+  scrollbar-width: none;
   border-left: thin solid #ebe2e5;
   filter: drop-shadow(-1px 0px 1px #ebe2e5);
   background-image: linear-gradient(90deg, #7a2a45, #4b0019 10% 90%, #25010c);
@@ -278,9 +279,6 @@ body.scroll-past-header-top header .header-bottom .header-bottom-wrap .header-bo
 }
 body.scroll-past-header-top main {
   margin-top: 60px;
-}
-body.disable-scroll .header-bottom {
-  padding-right: 15px;
 }
 @media screen and (max-width: 1024px) {
   header .header-bottom .header-bottom-wrap .header-nav-menu .header-nav-menu-inner {

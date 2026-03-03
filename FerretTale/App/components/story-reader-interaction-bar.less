@@ -163,15 +163,8 @@
         .story-reader-interaction-bar-inner-wrap {
             // Moved this out of default and into &.multi-choice to avoid height transition on single action bar.
             transition: height 0.7s ease-out 0.3s, opacity 0.7s ease-in;
-            // I decided to show a scroll bar by default because:
-            // 1. Showing it only when required creates a layout space skip during this element height change.
-            // 2. I don't estimate if one will be required or not.
-            // 3. Using animation delay on inner element for certain properties / values until after height change did not work.
-            // Instead of getting hacky or bothering more with this, just scroll. It's a small multi choice box so there would be a scroll bar most of the time.
             overflow-y: scroll;
-            // There's a 2 * @padding-column coming from the max-width wrap, but the scroll-bar on the right pushes the content further to the left.
-            // Fixing that here:
-            padding-right: (@padding-column * 2) - @expected-scroll-bar-width;
+            scrollbar-width: none;
         }
 
         // I've thought about opening the menu with a click instead of a hover,
@@ -248,13 +241,6 @@
                 margin-right: auto;
             }
         }
-    }
-}
-
-body.disable-scroll {
-    .story-reader-interaction-bar {
-        // Prevent layout shift to content when scroll bar is disabled. 
-        padding-right: @expected-scroll-bar-width;
     }
 }
 

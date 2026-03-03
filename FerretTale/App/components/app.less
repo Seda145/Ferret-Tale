@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-width: none;
+}
+
 ul,
 ol {
     // Override padding that browser adds by default, to match closest app padding.
@@ -145,13 +149,6 @@ input[type="checkbox"] {
 
 body.disable-scroll {
     overflow: hidden !important;
-
-    main {
-        // Prevent layout shift to content when scroll bar is disabled. 
-        // This assumes we had a scroll bar in the first place (or that this padding does not matter to current content otherwise).
-        // Fine for the current content of the app.
-        padding-right: @expected-scroll-bar-width;
-    }
 }
 
 main {

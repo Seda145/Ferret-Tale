@@ -33,6 +33,3 @@ footer .footer-wrap.max-width-wrap {
 body.injected-page-StoryPage footer {
   display: none;
 }
-body.disable-scroll footer .footer-wrap.max-width-wrap {
-  padding-right: 45px;
-}

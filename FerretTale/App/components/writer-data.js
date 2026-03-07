@@ -729,15 +729,17 @@ class WriterData {
         
         // console.log("Optimizing WriterData JSON.");
 
-        for (let [panelKey, panelValue] of Object.entries(this.getInfoPanels())) {
-            for (let [descKey, descVal] of Object.entries(panelValue.infoDescriptions)) {
-                if (descVal.header == null) {
-                    // header_size only makes sense to store if "header" is not null.
-                    delete descVal.header_size;
-                }
-                if (descVal.image == null) {
-                    // image_mode only makes sense to store if "image" is not null.
-                    delete descVal.image_mode;
+        for (const storyX of Object.values(this.data.progress.stories)) {
+            for (const panelValue of Object.values(storyX.infoPanels)) {
+                for (const descVal of Object.values(panelValue.infoDescriptions)) {
+                    if (descVal.header == null) {
+                        // header_size only makes sense to store if "header" is not null.
+                        delete descVal.header_size;
+                    }
+                    if (descVal.image == null) {
+                        // image_mode only makes sense to store if "image" is not null.
+                        delete descVal.image_mode;
+                    }
                 }
             }
         }

@@ -58,6 +58,13 @@ class LoadUserdataPage {
         this.element.remove();
 		this.element = null;
 
+        this.eBackground = null;
+        this.eWelcomeToAppHeader = null;
+        this.eLoadUserdataAppMode = null;
+        this.eInputUserdataFolder = null;
+        this.eCopyPath = null;
+        this.eNavHelpPage = null;
+
         // console.log("Prepared removal of self");
     }
 

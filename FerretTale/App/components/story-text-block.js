@@ -84,6 +84,11 @@ class StoryTextBlock {
         this.element.remove();
 		this.element = null;
 
+        this.eInfoSectionH = null;
+        this.eContentSection = null;
+        this.eTextSectionP = null;
+        this.estoryTextBlockImageWrap = null;
+
         // console.log("Prepared removal of self");
     }
 

@@ -38,6 +38,10 @@ class HelpItem {
         this.element.remove();
 		this.element = null;
 
+        this.eHelpTitle = null;
+        this.ehelpContentWrap = null;
+        this.eHelpDescription = null;
+
         // console.log("Prepared removal of self");
     }
 

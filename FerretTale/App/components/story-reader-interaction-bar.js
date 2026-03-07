@@ -98,6 +98,12 @@ class StoryReaderInteractionBar {
         this.element.remove();
 		this.element = null;
 
+        this.eInnerWrap = null;
+        this.eInteractionModeButton = null;
+        this.eInteractionContinue = null;
+        this.eInteractionEnd = null;
+        this.eInteractionActionsWrap = null;
+
         // console.log("Prepared removal of self");
     }
 

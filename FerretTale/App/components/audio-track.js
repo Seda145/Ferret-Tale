@@ -27,6 +27,8 @@ class AudioTrack {
     }
 	
 	prepareRemoval() {
+        window.clearInterval(this.fadeIntervalHandle);
+
         this.stopAudioDirectly();
         
         // console.log("Prepared removal of self");

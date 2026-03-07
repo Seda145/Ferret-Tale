@@ -6,7 +6,7 @@ class UIUtils {
 	static create() {
         /* Setup */
 
-        let nThis = new this();
+        const nThis = new this();
 
         nThis.acEventListener = new AbortController();
 
@@ -32,15 +32,17 @@ class UIUtils {
 
 	static createElement(inHTML) {
 		// Helper method to create an element exactly as the html argument specifies, without leaving a wrapping parent container created by "createElement".
-		let newElem = document.createElement("div");	
+        const newElem = document.createElement("div");	
         newElem.innerHTML = inHTML;
-        newElem = newElem.firstElementChild;
-		return newElem;		
+        const innerElem = newElem.firstElementChild;
+        // Remove old div parent reference.
+        innerElem.remove();
+        return innerElem;
 	}
 
 	static setInnerHTML(inParentElement, inHTML) {
 		// Helper method to create and append an element exactly as the html argument specifies, without leaving a wrapping parent container created by "createElement".
-		let newElem = UIUtils.createElement(inHTML);
+		const newElem = UIUtils.createElement(inHTML);
         inParentElement.innerHTML = "";
 		inParentElement.appendChild(newElem);
 		return newElem;
@@ -48,20 +50,20 @@ class UIUtils {
 
 	static prependInnerHTML(inParentElement, inHTML) {
 		// Helper method to create and append an element exactly as the html argument specifies, without leaving a wrapping parent container created by "createElement".
-		let newElem = UIUtils.createElement(inHTML);
+		const newElem = UIUtils.createElement(inHTML);
         inParentElement.prepend(newElem);
 		return newElem;
 	}
 
 	static appendInnerHTML(inParentElement, inHTML) {
 		// Helper method to create and append an element exactly as the html argument specifies, without leaving a wrapping parent container created by "createElement".
-		let newElem = UIUtils.createElement(inHTML);
+		const newElem = UIUtils.createElement(inHTML);
         inParentElement.append(newElem);
 		return newElem;
 	}
 
 	static replaceElement(inParentElement, inHTML) {
-		let newElem = UIUtils.createElement(inHTML);
+		const newElem = UIUtils.createElement(inHTML);
 		inParentElement.replaceWith(newElem);
 		return newElem;
 	}

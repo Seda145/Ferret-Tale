@@ -95,7 +95,7 @@ class MathUtils {
         // Float is commonly written in various ways (.5, 0.5, 0.), but not 0000.5.
         // I add this check for the HTML input type number allows such garbage (int 000002).
         if (inValue.startsWith("0") && inValue.length > 1) {
-            if (inValue[1] != "." || inValue[1] != ",") {
+            if (inValue[1] != "." && inValue[1] != ",") {
                 // If the second character is not a dot or comma, we have a garbage 0 prefix like "01", a value that should have been "1".
                 return false;
             }

@@ -69,6 +69,17 @@ class Header {
         this.element.remove();
 		this.element = null;
 
+        this.eMobileMenuIcon = null;
+        this.eMobileNavMenu = null;
+        this.eMobileNavMenuInner = null;
+        this.eNavMenu = null;
+        this.eNavMenuInner = null;
+        this.eNavOverlay = null;
+        this.eHeaderTop = null;
+        
+        this.contentSeparator.prepareRemoval();
+        this.contentSeparator = null;
+
         // console.log("Prepared removal of self");
     }
 

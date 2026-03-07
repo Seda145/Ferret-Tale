@@ -66,6 +66,11 @@ class StoryReaderInfoPanelInfo {
         this.element.remove();
         this.element = null;
 
+		this.eHeader = null;
+		this.eDescriptionAndImageWrap = null;
+		this.eImage = null;
+		this.eDescription = null;
+
         // console.log("Prepared removal of self");
     }
 

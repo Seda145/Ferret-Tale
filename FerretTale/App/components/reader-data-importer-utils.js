@@ -36,7 +36,7 @@ class ReaderDataImporterUtils {
 
             // Do some checks
 
-            const isNullOrEmpty = function(inString) {
+            const isNullOrEmpty = function(inVal) {
                 // I used to do just a null check here back when "about" was still edited as a text file about.json,
                 // To make sure that fields weren't missing.
                 //
@@ -45,7 +45,7 @@ class ReaderDataImporterUtils {
                 // just because there is no point of showing fields to a reader if the values are "".
                 // The app's writer mode does field validation on strings, so strings like "     ", already become "". Makes the check simple. 
                 // I'm not checking for everything that could go wrong for editing JSON directly with a text editor etc.
-                return (inString == null || inString == "");
+                return (inVal == null || inVal === "");
             }
 
             if (isNullOrEmpty(newStory.about.author)
@@ -58,6 +58,7 @@ class ReaderDataImporterUtils {
                 || isNullOrEmpty(newStory.about.storyCoverImage)
                 || isNullOrEmpty(newStory.about.readingLayout)
                 || isNullOrEmpty(newStory.about.showEmptyTextColumn)
+                || isNullOrEmpty(newStory.about.hideTitleWhileReading)
             ) {
                 alert(`Error: Missing / empty "about" fields detected in story.json. Story: ${key}`);
                 result.detectedError = true;

@@ -41,6 +41,9 @@ class ConfigFieldRange {
 
         this.element.remove();
 		this.element = null;
+
+        this.eTitle = null;
+        this.eInput = null;
         
         // console.log("Prepared removal of self");
     }
@@ -78,6 +81,8 @@ class ConfigFieldRange {
         const valueFloat = MathUtils.clamp(parseFloat(valueString), parseFloat(this.eInput.min), parseFloat(this.eInput.max));
         // Just everything stores it as a string. So convert it back again.
         this.validatedValue = valueFloat.toString();
+		
+		this.eInput.value = this.getValidatedValue();
 
         let userChangeEvent = new Event('user-change', { bubbles: false });
         userChangeEvent.configField = this;

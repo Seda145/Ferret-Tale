@@ -36,6 +36,8 @@ class WriterStoryInfoConfigPanel {
 
         this.element.remove();
         this.element = null;
+        
+        this.eInfoFieldsWrap = null;
 
         // console.log("Prepared removal of self");
     }

@@ -40,6 +40,9 @@ class ConfigFieldTextarea {
 
         this.element.remove();
 		this.element = null;
+
+        this.eTitle = null;
+        this.eTextArea = null;
         
         // console.log("Prepared removal of self");
     }

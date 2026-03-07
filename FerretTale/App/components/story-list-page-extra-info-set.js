@@ -23,6 +23,9 @@ class StoryListPageExtraInfoSet {
     prepareRemoval() {
         this.element.remove();
 		this.element = null;
+
+        this.eInfoSetKey = null;
+        this.eInfoSetValue = null;
         
         // console.log("Prepared removal of self");
     }

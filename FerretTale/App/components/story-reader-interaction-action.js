@@ -36,6 +36,9 @@ class StoryReaderInteractionAction {
         this.element.remove();
 		this.element = null;
 
+        this.eIndexP = null;
+        this.eTextP = null;
+
         // console.log("Prepared removal of self");
     }
 

@@ -102,6 +102,18 @@ class WriterStoryNodeOverview {
         this.element.remove();
 		this.element = null;
 
+        this.eCanvas = null;
+        this.eWriterStoryTitle = null;
+        this.eWriterStoryNodeCanvasWrap = null;
+        this.eWriterStoryNodeWrap = null;
+        this.eToolbarGoToSpan = null;
+        this.eToolbarButtonGoToInput = null;
+        this.eToolbarButtonAutoScrollInput = null;
+        this.eToolbarButtonZoomIn = null;
+        this.eToolbarButtonZoomOut = null;
+        this.eToolbarButtonAddBlock = null;
+        this.eToolbarButtonRemoveBlock = null;
+
         // console.log("Prepared removal of self");
     }
 

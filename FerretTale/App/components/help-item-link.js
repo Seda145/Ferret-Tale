@@ -33,6 +33,9 @@ class HelpItemLink {
         
         this.element.remove();
 		this.element = null;
+		
+		this.helpItem = null;			
+		this.eHelpTitleA = null;
 
         // console.log("Prepared removal of self");
     }
@@ -42,7 +45,7 @@ class HelpItemLink {
         //return (html`
         return (`
  
-<li class="help-item-link"><p><a></a></p></li>
+<li class="help-item-link"><p><a tabindex="0"></a></p></li>
 
         `);
     }

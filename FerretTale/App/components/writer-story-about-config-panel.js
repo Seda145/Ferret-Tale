@@ -70,6 +70,8 @@ class WriterStoryAboutConfigPanel {
         this.element.remove();
         this.element = null;
         
+        this.eConfigPanel = null;
+        
         // console.log("Prepared removal of self");
     }
 

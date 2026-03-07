@@ -40,6 +40,9 @@ class ConfigFieldText {
         this.element.remove();
 		this.element = null;
 
+        this.eTitle = null;
+        this.eInput = null;
+
         // console.log("Prepared removal of self");
     }
 

@@ -58,6 +58,9 @@ class StoryPage {
         this.element.remove();
 		this.element = null;
 
+        this.eStoryPageTitle = null;
+        this.eStoryTextBlockWrap = null;
+
         // console.log("Prepared removal of self");
     }
 

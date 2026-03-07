@@ -5,7 +5,7 @@ class WriterDataImporterUtils {
     static async import(inUserdata, inDataStruct) {
         let newData = {
             progress: {
-                active_story_title: null,
+                // active_story_title: null,
                 stories: {
 
                 }

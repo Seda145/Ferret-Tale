@@ -36,6 +36,9 @@ class HelpPage {
 
         this.element.remove();
         this.element = null;
+
+        this.eHelpLinksWrap = null;
+        this.eHelpItemWrap = null;
         
         // console.log("Prepared removal of self");
     }

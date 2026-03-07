@@ -79,6 +79,17 @@ class StoryListPage {
         this.element.remove();
 		this.element = null;
 
+        this.eStoryEntryWrap = null;
+        this.eStoryListEntry = null;
+        this.eStoryName = null;
+        this.eStoryDescription = null;
+        this.eStoryExtraInfo = null;
+        this.eCoverStoryEntryImage = null;
+        this.eBtnNavStoryEntryPrev = null;
+        this.eBtnNavStoryEntryNext = null;
+        this.eBtnReadStoryEntry = null;
+        this.eBtnRestartStoryEntry = null;
+
         // console.log("Prepared removal of self");
     } 
 

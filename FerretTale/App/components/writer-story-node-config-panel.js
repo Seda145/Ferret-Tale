@@ -93,6 +93,9 @@ class WriterStoryNodeConfigPanel {
 
         this.element.remove();
 		this.element = null;
+
+        this.eConfigPanelFirst = null;
+        this.eConfigPanelLast = null;
         
         // console.log("Prepared removal of self");
     }

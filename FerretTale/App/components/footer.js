@@ -23,6 +23,9 @@ class Footer {
 	prepareRemoval() {
         this.element.remove();
 		this.element = null;
+
+        this.eFooterNoticeCopyright = null;
+        this.eFooterNoticeVersion = null;
         
         // console.log("Prepared removal of self");
     }

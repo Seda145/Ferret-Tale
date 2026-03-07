@@ -40,6 +40,8 @@ class WriterStoryInfoField {
 
         this.element.remove();
         this.element = null;
+        
+        this.eButtonCopy = null;
 
         // console.log("Prepared removal of self");
     }

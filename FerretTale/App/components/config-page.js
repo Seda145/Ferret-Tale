@@ -69,6 +69,8 @@ class ConfigPage {
 
         this.element.remove();
 		this.element = null;
+
+        this.eConfigFieldsetWrap = null;
         
         // console.log("Prepared removal of self");
     }

@@ -21,6 +21,8 @@ class Fieldset {
         this.element.remove();
 		this.element = null;
         
+        this.eLegend = null;
+        
         // console.log("Prepared removal of self");
     }
 

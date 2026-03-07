@@ -52,6 +52,10 @@ class WriterStoryInfoPanelFieldsToolbar {
         this.element.remove();
         this.element = null;
 
+        this.eButtonWrap = null;
+        this.eButtonAdd = null;
+        this.eButtonDelete = null;
+
         // console.log("Prepared removal of self");
     }
 

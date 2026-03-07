@@ -75,6 +75,13 @@ class WriterPage {
 		
         this.element.remove();
 		this.element = null;
+
+        this.eWriterPageWrap = null;
+        this.eToolbarTop = null;
+        this.eToolbarSelectStory = null;
+        this.eToolbarSelectEditMode = null;
+        this.eToolbarButtonResetStory = null;
+        this.eToolbarButtonExportStory = null;
         
         // console.log("Prepared removal of self");
     }

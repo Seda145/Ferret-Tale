@@ -30,6 +30,8 @@ class WriterStoryNode {
 
         this.element.remove();
 		this.element = null;
+        
+        this.eId = null;
 
         // console.log("Prepared removal of self");
     }

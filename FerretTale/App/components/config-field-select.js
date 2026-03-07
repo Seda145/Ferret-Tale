@@ -42,6 +42,9 @@ class ConfigFieldSelect {
         this.element.remove();
 		this.element = null;
 
+        this.eTitle = null;
+        this.eSelect = null;
+
         // console.log("Prepared removal of self");
     }
 

@@ -1,4 +1,5 @@
-############ MEDIA: Banner_Ferret_Tale.png
+<img width="1000" height="300" alt="Banner_Ferret_Tale" src="https://github.com/user-attachments/assets/43039491-4c48-40cc-9246-91e31f19dfd3" />
+
 
 # Readme
 
@@ -62,32 +63,37 @@ Read the help page inside the app for assistance, and to learn how to load / sav
 ### Interface media:
 ---
 
-############ MEDIA: Preview_Ferret_Tale_App_Home.jpg
+<img width="1920" height="945" alt="Preview_Ferret_Tale_App_Home" src="https://github.com/user-attachments/assets/35757cc6-0c30-452c-a833-3428345e3da3" />
 
-############ MEDIA: Preview_Ferret_Tale_App_UI_Menu.jpg
+
+<img width="1920" height="945" alt="Preview_Ferret_Tale_App_UI_Menu" src="https://github.com/user-attachments/assets/d527c1a6-3393-4f42-8833-4b41f7958cff" />
+
 
 ---
 ### Reader mode media:
 ---
 
-############ MEDIA: Preview_Ferret_Tale_App_Story.gif
+<img width="1728" height="938" alt="Preview_Ferret_Tale_App_Story" src="https://github.com/user-attachments/assets/42425149-94be-4a78-bbaf-7bfbbee66bbe" />
+
 
 
 ---
 ### Writer mode media:
 ---
 
-############ MEDIA: Preview_Ferret_Tale_App_Write.gif
+<img width="1738" height="936" alt="Preview_Ferret_Tale_App_Write" src="https://github.com/user-attachments/assets/b44ad935-aaff-4004-aaf4-6b60932be84c" />
+
 
 ---
 ### Settings page media:
 ---
 
-############ MEDIA: Preview_Ferret_Tale_App_Settings.jpg
+<img width="1920" height="945" alt="Preview_Ferret_Tale_App_Settings" src="https://github.com/user-attachments/assets/944be098-3e70-41b4-a770-79a45534f94d" />
+
 
 
 ---
 ### Help page media:
 ---
 
-############ MEDIA: Preview_Ferret_Tale_App_Help.jpg
+<img width="1920" height="945" alt="Preview_Ferret_Tale_App_Help" src="https://github.com/user-attachments/assets/25a514ab-6a78-47b4-ad37-2c3e9d3231a6" />
